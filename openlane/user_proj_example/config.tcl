@@ -34,6 +34,7 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 set ::env(CLOCK_TREE_SYNTH) 0
 #set ::env(CLOCK_PERIOD) 0
 set ::env(RUN_SPEF_EXTRACTION) 0
+set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
 
 set ::env(CLOCK_PORT) ""
