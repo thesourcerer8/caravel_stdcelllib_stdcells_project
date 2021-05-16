@@ -1,0 +1,80 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO AOI21X1
+  CLASS CORE ;
+  FOREIGN AOI21X1 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 5.760 BY 3.330 ;
+  SYMMETRY X Y R90 ;
+  SITE unithd ;
+  PIN vdd
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 3.090 5.760 3.570 ;
+    END
+  END vdd
+  PIN gnd
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 -0.240 5.760 0.240 ;
+    END
+  END gnd
+  PIN Y
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 4.660 2.150 4.950 2.440 ;
+        RECT 4.730 0.690 4.870 2.150 ;
+        RECT 0.820 0.610 1.110 0.690 ;
+        RECT 4.660 0.610 4.950 0.690 ;
+        RECT 0.820 0.470 4.950 0.610 ;
+        RECT 0.820 0.400 1.110 0.470 ;
+        RECT 4.660 0.400 4.950 0.470 ;
+    END
+  END Y
+  PIN B
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 1.300 1.750 1.590 2.040 ;
+        RECT 1.370 1.090 1.510 1.750 ;
+        RECT 1.300 0.800 1.590 1.090 ;
+    END
+  END B
+  PIN A
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 2.740 1.750 3.030 2.040 ;
+        RECT 2.810 1.090 2.950 1.750 ;
+        RECT 2.740 0.800 3.030 1.090 ;
+    END
+  END A
+  PIN C
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 4.180 1.750 4.470 2.040 ;
+        RECT 4.250 1.090 4.390 1.750 ;
+        RECT 4.180 0.800 4.470 1.090 ;
+    END
+  END C
+END AOI21X1
+END LIBRARY
+

@@ -20,13 +20,30 @@ set ::env(DESIGN_NAME) user_proj_example
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../caravel/verilog/rtl/defines.v \
 	$script_dir/../../verilog/rtl/user_proj_example.v"
+#       $script_dir/../../verilog/rtl/user_proj_cells.v"
+
+set verilog_root $script_dir/../../verilog/
+set lef_root $script_dir/../../cells/lef/
+set gds_root $script_dir/../../cells/gds/
+# Adding the standard cells into OpenLane:
+set ::env(EXTRA_LEFS) [glob $script_dir/../../cells/lef/*.lef]
+set ::env(EXTRA_LIBS) [glob $script_dir/../../cells/lib/libres*.lib]
+set ::env(EXTRA_GDS_FILES)  [glob $script_dir/../../cells/gds/*.gds]
+set ::env(VERILOG_FILES_BLACKBOX) "$verilog_root/rtl/user_proj_cells.v"
+set ::env(SYNTH_READ_BLACKBOX_LIB) 1
+set ::env(CLOCK_TREE_SYNTH) 0
+#set ::env(CLOCK_PERIOD) 0
+set ::env(RUN_SPEF_EXTRACTION) 0
+
 
 set ::env(CLOCK_PORT) ""
 set ::env(CLOCK_NET) "counter.clk"
 set ::env(CLOCK_PERIOD) "10"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 900 600"
+#set ::env(DIE_AREA) "0 0 900 600"
+set ::env(DIE_AREA) "0 0 300 300"
+
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
@@ -34,8 +51,8 @@ set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
-set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.05
+set ::env(PL_BASIC_PLACEMENT) 0
+#set ::env(PL_TARGET_DENSITY) 0.1
 
 # If you're going to use multiple power domains, then keep this disabled.
 set ::env(RUN_CVC) 0

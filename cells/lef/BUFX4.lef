@@ -1,0 +1,58 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO BUFX4
+  CLASS CORE ;
+  FOREIGN BUFX4 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 5.760 BY 3.330 ;
+  SYMMETRY X Y R90 ;
+  SITE unithd ;
+  PIN vdd
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 3.090 5.760 3.570 ;
+    END
+  END vdd
+  PIN gnd
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 -0.240 5.760 0.240 ;
+    END
+  END gnd
+  PIN Y
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 3.220 2.370 3.510 2.440 ;
+        RECT 3.700 2.370 3.990 2.440 ;
+        RECT 3.220 2.230 4.870 2.370 ;
+        RECT 3.220 2.150 3.510 2.230 ;
+        RECT 3.700 2.150 3.990 2.230 ;
+        RECT 3.700 0.610 3.990 0.690 ;
+        RECT 4.730 0.610 4.870 2.230 ;
+        RECT 3.700 0.470 4.870 0.610 ;
+        RECT 3.700 0.400 3.990 0.470 ;
+    END
+  END Y
+  PIN A
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 1.300 1.750 1.590 2.040 ;
+    END
+  END A
+END BUFX4
+END LIBRARY
+
