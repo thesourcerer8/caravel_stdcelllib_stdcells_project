@@ -53,7 +53,18 @@ set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(PL_BASIC_PLACEMENT) 0
-#set ::env(PL_TARGET_DENSITY) 0.1
+set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+set ::env(PL_TARGET_DENSITY) 0.5
 
 # If you're going to use multiple power domains, then keep this disabled.
 set ::env(RUN_CVC) 0
+
+set ::env(PLACE_SITE) "unit"
+set ::env(PLACE_SITE_HEIGHT) "3.330"
+set ::env(PLACE_SITE_WIDTH) "0.480"
+
+set ::env(SYNTH_DRIVING_CELL) "sky130_fd_sc_ls__inv_8"
+set ::env(ROOT_CLK_BUFFER) "sky130_fd_sc_ls__clkbuf_16"
+set ::env(CLK_BUFFER) "sky130_fd_sc_ls__clkbuf_4"
+set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_ls"
+

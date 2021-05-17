@@ -1,6 +1,11 @@
 #!/bin/bash
-echo This script needs to be run from the StdCellLib/Catalog directory
 #CARAVEL=/media/philipp/Daten/skywater/caravel-stdcelllib-stdcells
+
+if [ -z "$CARAVEL" ]
+then
+	echo "Environment variables not found, please run '. env.sh' to define them."
+	exit
+fi
 
 mkdir $CARAVEL/cells{,/lib,/lef,/lef/orig,/gds,/mag}
 

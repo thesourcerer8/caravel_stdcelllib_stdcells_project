@@ -120,12 +120,3 @@ module INVX8(
 );
 endmodule
 
-module LATCH(
-  inout D, // input
-  inout CLK, // input
-  inout Q, // output
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-);
-endmodule
-

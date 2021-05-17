@@ -157,15 +157,6 @@ INVX8 INVX8(
   .A(io_in[33]),
   .Y(io_out[34]),
 );
-LATCH LATCH(
- `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
- `endif
-  .D(io_in[35]),
-  .CLK(io_in[36]),
-  .Q(io_out[37]),
-);
 assign io_oeb[0] = 1'b1;
 assign io_oeb[1] = 1'b1;
 assign io_oeb[2] = 1'b0;
@@ -201,7 +192,4 @@ assign io_oeb[31] = 1'b1;
 assign io_oeb[32] = 1'b0;
 assign io_oeb[33] = 1'b1;
 assign io_oeb[34] = 1'b0;
-assign io_oeb[35] = 1'b1;
-assign io_oeb[36] = 1'b1;
-assign io_oeb[37] = 1'b0;
 endmodule

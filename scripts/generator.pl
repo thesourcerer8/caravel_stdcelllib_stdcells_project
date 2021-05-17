@@ -63,8 +63,12 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   next if((-s $mag)<=50);
   #print `ls -la $mag`;
   my $cell=$mag; $cell=~s/\.mag$/.cell/;
+  my $lib=$mag; $lib=~s/\.mag$/.lib/;
+
   my $name=""; $name=$1 if($mag=~m/([\w\-\.]+)\.mag$/);
   next unless(-f $cell);
+  next unless(-f $lib);
+
   open CELL,"<$cell";
   print "$name $name(\n";
   print " `ifdef USE_POWER_PINS\n";
