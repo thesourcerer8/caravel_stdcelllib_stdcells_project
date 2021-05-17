@@ -8,7 +8,7 @@ MACRO INVX4
   ORIGIN 0.000 0.000 ;
   SIZE 4.320 BY 3.330 ;
   SYMMETRY X Y R90 ;
-  SITE unithd ;
+  SITE unit ;
   PIN vdd
     DIRECTION INOUT ;
     USE POWER ;

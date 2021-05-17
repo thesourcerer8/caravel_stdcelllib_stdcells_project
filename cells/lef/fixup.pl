@@ -12,9 +12,9 @@ foreach my $lef (<orig/*.lef>)
   while(<LEFIN>)
   {
     $pin=$1 if(m/PIN (\w+)/);	  
-    s/SYMMETRY X Y R90/SITE unithd/;
+    s/SYMMETRY X Y R90/SITE unit/;
     s/SITE CORE/SYMMETRY X Y R90/;
-    #s/SITE unithd.*//;
+    #s/SITE unit.*//;
     s/metal2/met1/;
     s/VDD/vdd/;
     s/GND/gnd/;

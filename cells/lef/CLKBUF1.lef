@@ -8,7 +8,7 @@ MACRO CLKBUF1
   ORIGIN 0.000 0.000 ;
   SIZE 12.960 BY 3.330 ;
   SYMMETRY X Y R90 ;
-  SITE unithd ;
+  SITE unit ;
   PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
