@@ -1,3 +1,4 @@
+export STD_CELL_LIBRARY=sky130_fd_sc_ls
 export STDCELLLIB=/home/philipp/libresilicon/StdCellLib
 export OPENLANE_ROOT=$(readlink -f $(pwd)/../openlane )
 export OPENLANE_TAG=v0.15
