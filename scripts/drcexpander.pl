@@ -142,6 +142,15 @@ while(<IN>)
       $alias{$_}=1;
     }
   }
+  # Rule: width type-list width error
+  if(m/^\s*(width)\s+(\S+)\s+(\S+)\s+"([^"]*)"\s*$/)
+  {
+    $alias{$2}=1;
+    foreach(split(",",$2))
+    {
+      $alias{$_}=1;
+    }
+  }
 }
 close IN;
 
@@ -314,6 +323,17 @@ while(<IN>)
     }
     #print "\n";
   }
+  # Rule: width type-list width error
+  elsif(m/^\s*(width)\s+(\S+)\s+(\S+)\s+"([^"]*)"\s*$/)
+  {
+    print " # ORIGINAL RULE:$oneline\n";
+    my $vl2=$2;
+    my $l2=join " ",allLayers($vl2);
+    my $text=$4;
+    print "  $1 $vl2 $3 \"$4 [paint $l2]\"\n";
+  }
+
+
   else
   {
     print $_;
