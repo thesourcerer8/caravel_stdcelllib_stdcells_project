@@ -347,7 +347,7 @@ while(<IN>)
     print " # ORIGINAL RULE:$oneline\n";
     my $vl2=$2;
     print STDERR "ALLLAYERS $vl2\n" if($debug);
-    my $l2=join " ",allLayers($vl2);
+    my $l2=join ",",allLayers($vl2); # For painting we need a different strategy to try each layer individually
     print STDERR "INFO: vl2=$vl2 l2=$l2\n" if($debug);
     my $text=$4;
     print "  $1 $vl2 $3 \"$4 [paint $l2]\"\n";
