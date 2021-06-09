@@ -131,15 +131,19 @@ while(<IN>)
   s/\\//g;
   if(m/^\s*(spacing|surround)\s+(\S+)\s+(\S+)\s+/)
   {
-    $alias{$2}=1;
-    $alias{$3}=1;
-    foreach(split(",",$2))
+    my $a2=$2;
+    my $a3=$3;
+    $alias{$a2}=1;
+    $alias{$a3}=1;
+    foreach(split(",",$a2))
     {
       $alias{$_}=1;
+      $alias{$1}=1 if(m/^([^\/]+)/);
     }
-    foreach(split(",",$3))
+    foreach(split(",",$a3))
     {
       $alias{$_}=1;
+      $alias{$1}=1 if(m/^([^\/]+)/);
     }
   }
   # Rule: width type-list width error
@@ -226,17 +230,31 @@ sub allLayers($)
   my %b=();
   foreach(@a)
   {
-    #print STDERR "piece: $_\n";	  
-    if(m/(\/\S+)/ && defined($alias{$_}))
+    print STDERR "piece: $_\n" if($debug);
+    if(m/(\/\S+)/ && defined($alias{$_}) && $alias{$_})
     {    
+      print STDERR "WE FOUND A SLASH AND AN ALIAS\n" if($debug);
       my $image=$1;
       foreach my $part(split " ",$alias{$_})
       {
+        print STDERR "PART: $part\n" if($debug);
         $b{$part.(($part =~ m/\//)?"":$image)}=1;
+      }
+    }
+    elsif(m/^([^\/]+)(\/\S+)/) # This is a workaround for bugs in magic that hopefully get fixed
+    {
+      print STDERR "WE FOUND A SLASH BUT NO ALIAS\n" if($debug);
+      my $image=$2;
+      my $short=$1;
+      foreach my $part(split " ",$alias{$short})
+      {
+        print STDERR "PART: $part\n" if($debug);
+        $b{$part.$image}=1;
       }
     }
     else
     {
+      print STDERR "NO SLASH OR ALIAS\n" if($debug);
       foreach my $part(split " ",$alias{$_})
       {
         $b{$part}=1;
@@ -328,7 +346,9 @@ while(<IN>)
   {
     print " # ORIGINAL RULE:$oneline\n";
     my $vl2=$2;
+    print STDERR "ALLLAYERS $vl2\n" if($debug);
     my $l2=join " ",allLayers($vl2);
+    print STDERR "INFO: vl2=$vl2 l2=$l2\n" if($debug);
     my $text=$4;
     print "  $1 $vl2 $3 \"$4 [paint $l2]\"\n";
   }
