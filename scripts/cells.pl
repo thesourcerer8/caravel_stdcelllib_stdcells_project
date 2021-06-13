@@ -29,6 +29,8 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   my $name=""; $name=$1 if($mag=~m/([\w\-\.]+)\.mag$/);
   next unless(-f $cell);
   next unless(-f $lib);
+  next unless(-f $ENV{'CARAVEL'}."/cells/mag/$name.mag");
+
   open CELL,"<$cell";
   print "module $name(\n";
 
