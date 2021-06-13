@@ -1,14 +1,44 @@
 #!/usr/bin/perl -w
 
+my %layersToDo=("li1"=>1,"mcon"=>1,"locali"=>1,"metal1"=>1);
+
+
 foreach my $lef (<orig/*.lef>)
 {
   $lef=~s/^orig\///;	
   my $mag="../mag/$lef"; $mag=~s/\.lef$/\.mag/;
+
+  if(open MAGIN,"<$mag")
+  {
+    my $active=0;
+    while(<MAGIN>)
+    {
+      if(m/<< (\w+) >>/)
+      {
+        $active=defined($layersToDo{$1});
+	$obs.="    LAYER $1 ;\n" if($active);
+      }
+      if(m/rect (-?\d+) (-?\d+) (-?\d+) (-?\d+)/ && $active)
+      {
+        $obs.="RECT ( ".($1/1000.0)." ".($2/1000.0)." ) ( ".($3/1000.0)." ".($4/1000.0)." ) ;\n";
+      }
+    }
+    close MAGIN;
+  }
+  else
+  {
+     print "ERROR: Could not open magic file $mag : $!\n";
+  }
+
+  #print "$mag\n$obs\n";
+  #next;
+
   my $cell=$lef; $cell=~s/\.lef//;
   print "$lef\n";
   open LEFIN,"<orig/$lef";
   open LEFOUT,">$lef";
   our $pin="";
+  my $filled=0;
   while(<LEFIN>)
   {
     $pin=$1 if(m/PIN (\w+)/);	  
@@ -20,6 +50,11 @@ foreach my $lef (<orig/*.lef>)
     s/GND/gnd/;
     s/USE SIGNAL/USE POWER/ if($pin eq "VDD");
     s/USE SIGNAL/USE GROUND/ if($pin eq "GND");
+
+    if(m/^END (\w+)/ && !$filled)
+    {
+      print LEFOUT "  OBS\n$obs\n  end\n";
+    }
 
     print LEFOUT $_;	   
     #print $_;
