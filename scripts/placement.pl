@@ -15,9 +15,9 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   next unless(-f $cell);
   my $lib=$mag; $lib=~s/\.mag$/.lib/;
   next unless(-f $lib);
+  my $name=""; $name=$1 if($mag=~m/([\w\-\.]+)\.mag$/);
   next unless(-f $ENV{'CARAVEL'}."/cells/mag/$name.mag");
 
-  my $name=""; $name=$1 if($mag=~m/([\w\-\.]+)\.mag$/);
   print "$name ".($width*80)." $nextla N\n";
   $nextla+=$height*2;
 }
