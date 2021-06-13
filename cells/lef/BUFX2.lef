@@ -44,6 +44,8 @@ MACRO BUFX2
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
+        RECT 1.300 1.340 1.590 1.630 ;
+        RECT 1.370 1.090 1.510 1.340 ;
         RECT 1.300 0.800 1.590 1.090 ;
     END
   END A

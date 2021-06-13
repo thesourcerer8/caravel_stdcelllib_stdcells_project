@@ -33,9 +33,9 @@ MACRO INVX1
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
-        RECT 1.780 2.150 2.070 2.440 ;
-        RECT 1.850 0.690 1.990 2.150 ;
-        RECT 1.780 0.400 2.070 0.690 ;
+        RECT 0.580 2.150 0.870 2.440 ;
+        RECT 0.650 0.690 0.790 2.150 ;
+        RECT 0.580 0.400 0.870 0.690 ;
     END
   END Y
   PIN A
