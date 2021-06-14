@@ -1,15 +1,18 @@
 #!/usr/bin/perl -w
+use strict;
 
 my %layersToDo=("li1"=>1,"mcon"=>1,"locali"=>1,"metal1"=>1);
 
-
-foreach my $lef (<orig/*.lef>)
+foreach my $origlef (<orig/*.lef>)
 {
-  $lef=~s/^orig\///;	
+  my $lef=$origlef; $lef=~s/^orig\///;	
   my $mag="../mag/$lef"; $mag=~s/\.lef$/\.mag/;
+  print STDERR "origlef: $origlef\n lef: $lef\n mag:$mag\n";
+  my $obs="";
 
-  if(open MAGIN,"<$mag")
+  if(open(MAGIN,"<$mag"))
   {
+    print "Extracting Obstruction information from $mag\n";	  
     my $active=0;
     while(<MAGIN>)
     {
