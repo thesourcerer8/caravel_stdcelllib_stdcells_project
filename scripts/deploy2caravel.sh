@@ -28,6 +28,7 @@ rm $CARAVEL/cells/mag/demoboard.mag
 
 echo "Removing cells with DRC issues left"
 cd $CARAVEL/cells/mag
+rm -f corr.*.mag
 perl $CARAVEL/scripts/removeDRCcells.pl
 
 echo "Now cleaning up the files for Sky130"
