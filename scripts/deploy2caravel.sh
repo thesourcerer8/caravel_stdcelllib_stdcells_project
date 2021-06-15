@@ -5,10 +5,16 @@ if [ -z "$CARAVEL" ]
 then
 	echo "Environment variables not found, please run '. env.sh' to define them."
 	source env.sh || source ../env.sh
-	#exit
 fi
 
-mkdir $CARAVEL/cells{,/lib,/lef,/lef/orig,/gds,/mag}
+if [ -z "$CARAVEL" ]
+then
+	echo "Environment variables still not found, please run '. env.sh' to define them."
+	exit
+fi
+
+
+mkdir $CARAVEL/cells{,/lib,/lef,/lef/orig,/gds,/mag} 2>/dev/null
 
 echo "Cleaning up old files"
 rm -f $CARAVEL/cells/lib/*.lib $CARAVEL/cells/lef/orig/*.lef $CARAVEL/cells/lef/*.lef $CARAVEL/cells/gds/*.gds $CARAVEL/cells/mag/*.mag
