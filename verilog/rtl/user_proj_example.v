@@ -49,8 +49,8 @@ AND2X1 AND2X1(
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .B(io_in[0]),
-  .A(io_in[1]),
+  .A(io_in[0]),
+  .B(io_in[1]),
   .Y(io_out[2]),
 );
 AND2X2 AND2X2(
@@ -58,8 +58,8 @@ AND2X2 AND2X2(
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .B(io_in[3]),
-  .A(io_in[4]),
+  .A(io_in[3]),
+  .B(io_in[4]),
   .Y(io_out[5]),
 );
 AOI21X1 AOI21X1(
@@ -67,9 +67,9 @@ AOI21X1 AOI21X1(
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .C(io_in[6]),
+  .A(io_in[6]),
   .B(io_in[7]),
-  .A(io_in[8]),
+  .C(io_in[8]),
   .Y(io_out[9]),
 );
 AOI22X1 AOI22X1(
@@ -77,10 +77,10 @@ AOI22X1 AOI22X1(
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .D(io_in[10]),
-  .C(io_in[11]),
-  .B(io_in[12]),
-  .A(io_in[13]),
+  .A(io_in[10]),
+  .B(io_in[11]),
+  .C(io_in[12]),
+  .D(io_in[13]),
   .Y(io_out[14]),
 );
 BUFX2 BUFX2(
@@ -91,33 +91,33 @@ BUFX2 BUFX2(
   .A(io_in[15]),
   .Y(io_out[16]),
 );
-BUFX4 BUFX4(
- `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
- `endif
-  .A(io_in[17]),
-  .Y(io_out[18]),
-);
-CLKBUF1 CLKBUF1(
- `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
- `endif
-  .A(io_in[19]),
-  .Y(io_out[20]),
-);
 HAX1 HAX1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .B(io_in[21]),
-  .A(io_in[22]),
-  .YS(io_out[23]),
-  .YC(io_out[24]),
+  .A(io_in[17]),
+  .B(io_in[18]),
+  .YC(io_out[19]),
+  .YS(io_out[20]),
 );
 INV INV(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(io_in[21]),
+  .Y(io_out[22]),
+);
+INVX1 INVX1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(io_in[23]),
+  .Y(io_out[24]),
+);
+INVX2 INVX2(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -125,7 +125,7 @@ INV INV(
   .A(io_in[25]),
   .Y(io_out[26]),
 );
-INVX1 INVX1(
+INVX4 INVX4(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -133,7 +133,7 @@ INVX1 INVX1(
   .A(io_in[27]),
   .Y(io_out[28]),
 );
-INVX2 INVX2(
+INVX8 INVX8(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -141,21 +141,82 @@ INVX2 INVX2(
   .A(io_in[29]),
   .Y(io_out[30]),
 );
-INVX4 INVX4(
+MUX2X1 MUX2X1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
   .A(io_in[31]),
-  .Y(io_out[32]),
+  .B(io_in[32]),
+  .S(io_in[33]),
+  .Y(io_out[34]),
 );
-INVX8 INVX8(
+NAND2X1 NAND2X1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .A(io_in[33]),
-  .Y(io_out[34]),
+  .A(io_in[35]),
+  .B(io_in[36]),
+  .Y(io_out[37]),
+);
+NAND3X1 NAND3X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[0]),
+  .B(la_data_in[1]),
+  .C(la_data_in[2]),
+  .Y(la_data_out[3]),
+);
+NOR2X1 NOR2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[4]),
+  .B(la_data_in[5]),
+  .Y(la_data_out[6]),
+);
+OAI21X1 OAI21X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[7]),
+  .B(la_data_in[8]),
+  .C(la_data_in[9]),
+  .Y(la_data_out[10]),
+);
+OAI22X1 OAI22X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[11]),
+  .B(la_data_in[12]),
+  .C(la_data_in[13]),
+  .D(la_data_in[14]),
+  .Y(la_data_out[15]),
+);
+OR2X1 OR2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[16]),
+  .B(la_data_in[17]),
+  .Y(la_data_out[18]),
+);
+XNOR2X1 XNOR2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[19]),
+  .B(la_data_in[20]),
+  .Y(la_data_out[21]),
 );
 assign io_oeb[0] = 1'b1;
 assign io_oeb[1] = 1'b1;
@@ -175,12 +236,12 @@ assign io_oeb[14] = 1'b0;
 assign io_oeb[15] = 1'b1;
 assign io_oeb[16] = 1'b0;
 assign io_oeb[17] = 1'b1;
-assign io_oeb[18] = 1'b0;
-assign io_oeb[19] = 1'b1;
+assign io_oeb[18] = 1'b1;
+assign io_oeb[19] = 1'b0;
 assign io_oeb[20] = 1'b0;
 assign io_oeb[21] = 1'b1;
-assign io_oeb[22] = 1'b1;
-assign io_oeb[23] = 1'b0;
+assign io_oeb[22] = 1'b0;
+assign io_oeb[23] = 1'b1;
 assign io_oeb[24] = 1'b0;
 assign io_oeb[25] = 1'b1;
 assign io_oeb[26] = 1'b0;
@@ -189,7 +250,10 @@ assign io_oeb[28] = 1'b0;
 assign io_oeb[29] = 1'b1;
 assign io_oeb[30] = 1'b0;
 assign io_oeb[31] = 1'b1;
-assign io_oeb[32] = 1'b0;
+assign io_oeb[32] = 1'b1;
 assign io_oeb[33] = 1'b1;
 assign io_oeb[34] = 1'b0;
+assign io_oeb[35] = 1'b1;
+assign io_oeb[36] = 1'b1;
+assign io_oeb[37] = 1'b0;
 endmodule
