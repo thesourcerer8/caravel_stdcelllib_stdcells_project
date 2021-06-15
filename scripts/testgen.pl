@@ -9,8 +9,8 @@ EOF
 
 my $header=<IN>;
 my @l=split "->",$header;
-my @ins=split " ",$l[0];
-my @outs=split " ",$l[1];
+my @ins=sort split " ",$l[0];
+my @outs=sort split " ",$l[1];
 my %map=();
 
 my $reg=0;

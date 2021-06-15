@@ -82,7 +82,7 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   {
     if(m/^\.inputs (.*)/)
     {
-      foreach my $inp(split " ",$1)
+      foreach my $inp(sort split " ",$1)
       {
         my $io=$nextio++;
 	if($io<$MPRJ_IO_PADS)
@@ -101,7 +101,7 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
     }
     if(m/^\.outputs (.*)/)
     {
-      foreach my $outp(split " ",$1)
+      foreach my $outp(sort split " ",$1)
       {
         my $io=$nextio++;
 	if($io<$MPRJ_IO_PADS)

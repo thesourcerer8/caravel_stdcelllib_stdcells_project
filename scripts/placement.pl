@@ -7,7 +7,7 @@ our $nextla=$height*7;
 
 my $STDCELLLIB=$ENV{'STDCELLLIB'} || "/home/philipp/libresilicon/StdCellLib";
 
-foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
+foreach my $mag(sort <$STDCELLLIB/Catalog/*.mag>)
 {
   next if((-s $mag)<=50);
   #print `ls -la $mag`;

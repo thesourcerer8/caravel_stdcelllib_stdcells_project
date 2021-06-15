@@ -20,7 +20,7 @@ EOF
 our $nextla=0;
 our $nextio=0;
 
-foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
+foreach my $mag(sort <$STDCELLLIB/Catalog/*.mag>)
 {
   next if((-s $mag)<=50);
   #print `ls -la $mag`;
@@ -38,7 +38,7 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   {
     if(m/^\.inputs (.*)/)
     {
-      foreach my $inp(split " ",$1)
+      foreach my $inp(sort split " ",$1)
       {
         my $io=$nextio++;
 	print "  inout $inp, // input\n";
@@ -46,7 +46,7 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
     }
     if(m/^\.outputs (.*)/)
     {
-      foreach my $outp(split " ",$1)
+      foreach my $outp(sort split " ",$1)
       {
         my $io=$nextio++;
 	print "  inout $outp, // output\n";
