@@ -28,6 +28,8 @@ cd $STDCELLLIB/Catalog
 echo "Copying files that were created by StdCellLib"
 cp *.mag $CARAVEL/cells/mag/
 cp *.lib $CARAVEL/cells/lib/
+cp *.cell $CARAVEL/cells/cell/
+cp *.sp $CARAVEL/cells/sp/
 cp outputlib/*.lef $CARAVEL/cells/lef/orig/
 cp outputlib/*.gds $CARAVEL/cells/gds/
 rm $CARAVEL/cells/mag/demoboard.mag
