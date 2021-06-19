@@ -77,8 +77,8 @@ foreach my $origlef (<orig/*.lef>)
     #s/SITE CORE/SYMMETRY X Y R90/;
     #s/SITE unit.*//;
     s/metal2/met1/;
-    s/VDD/vdd/;
-    s/GND/gnd/;
+    s/VDD/vccd1/;
+    s/GND/vssd1/;
     s/USE SIGNAL/USE POWER/ if($pin eq "VDD");
     s/USE SIGNAL/USE GROUND/ if($pin eq "GND");
 
