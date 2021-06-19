@@ -9,7 +9,7 @@ MACRO INVX4
   SIZE 4.320 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vdd
+  PIN vccd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -21,8 +21,8 @@ MACRO INVX4
         RECT 2.010 2.840 2.070 3.010 ;
         RECT 1.780 2.780 2.070 2.840 ;
     END
-  END vdd
-  PIN gnd
+  END vccd1
+  PIN vssd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -34,7 +34,7 @@ MACRO INVX4
         RECT 1.780 0.240 2.070 0.320 ;
         RECT 0.000 -0.240 4.320 0.240 ;
     END
-  END gnd
+  END vssd1
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

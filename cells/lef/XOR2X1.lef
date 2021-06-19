@@ -9,7 +9,7 @@ MACRO XOR2X1
   SIZE 10.080 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vdd
+  PIN vccd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -24,8 +24,8 @@ MACRO XOR2X1
         RECT 2.010 2.840 2.070 3.010 ;
         RECT 1.780 2.780 2.070 2.840 ;
     END
-  END vdd
-  PIN gnd
+  END vccd1
+  PIN vssd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -39,7 +39,7 @@ MACRO XOR2X1
         RECT 7.770 0.240 7.830 0.270 ;
         RECT 0.000 -0.240 10.080 0.240 ;
     END
-  END gnd
+  END vssd1
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

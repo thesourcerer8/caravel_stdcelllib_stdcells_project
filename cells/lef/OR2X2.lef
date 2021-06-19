@@ -9,7 +9,7 @@ MACRO OR2X2
   SIZE 5.760 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vdd
+  PIN vccd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -21,8 +21,8 @@ MACRO OR2X2
         RECT 3.450 2.840 3.510 3.010 ;
         RECT 3.220 2.780 3.510 2.840 ;
     END
-  END vdd
-  PIN gnd
+  END vccd1
+  PIN vssd1
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -38,7 +38,7 @@ MACRO OR2X2
         RECT 3.220 0.240 3.510 0.320 ;
         RECT 0.000 -0.240 5.760 0.240 ;
     END
-  END gnd
+  END vssd1
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;
