@@ -9,7 +9,7 @@ MACRO HAX1
   SIZE 15.840 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -37,8 +37,8 @@ MACRO HAX1
         RECT 13.770 2.840 13.830 3.010 ;
         RECT 13.540 2.780 13.830 2.840 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN gnd
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -60,7 +60,7 @@ MACRO HAX1
         RECT 13.540 0.240 13.830 0.320 ;
         RECT 0.000 -0.240 15.840 0.240 ;
     END
-  END vssd1
+  END gnd
   PIN YC
     DIRECTION INOUT ;
     USE SIGNAL ;

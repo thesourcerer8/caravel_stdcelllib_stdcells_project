@@ -9,7 +9,7 @@ MACRO MUX2X1
   SIZE 8.640 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -25,8 +25,8 @@ MACRO MUX2X1
         RECT 7.770 2.840 7.830 3.010 ;
         RECT 7.540 2.780 7.830 2.840 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN gnd
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -42,7 +42,7 @@ MACRO MUX2X1
         RECT 7.540 0.240 7.830 0.320 ;
         RECT 0.000 -0.240 8.640 0.240 ;
     END
-  END vssd1
+  END gnd
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

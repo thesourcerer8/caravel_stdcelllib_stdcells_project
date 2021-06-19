@@ -9,7 +9,7 @@ MACRO NAND2X1
   SIZE 4.320 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -21,8 +21,8 @@ MACRO NAND2X1
         RECT 2.010 2.840 2.070 3.010 ;
         RECT 1.780 2.780 2.070 2.840 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN gnd
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -34,7 +34,7 @@ MACRO NAND2X1
         RECT 3.220 0.240 3.510 0.320 ;
         RECT 0.000 -0.240 4.320 0.240 ;
     END
-  END vssd1
+  END gnd
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

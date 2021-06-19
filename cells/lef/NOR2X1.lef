@@ -9,7 +9,7 @@ MACRO NOR2X1
   SIZE 4.320 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -21,8 +21,8 @@ MACRO NOR2X1
         RECT 0.810 2.840 0.870 3.010 ;
         RECT 0.580 2.780 0.870 2.840 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN gnd
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -33,7 +33,7 @@ MACRO NOR2X1
         RECT 2.010 0.240 2.070 0.270 ;
         RECT 0.000 -0.240 4.320 0.240 ;
     END
-  END vssd1
+  END gnd
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

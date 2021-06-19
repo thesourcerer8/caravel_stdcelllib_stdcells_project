@@ -9,7 +9,7 @@ MACRO AND2X1
   SIZE 5.760 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -25,8 +25,8 @@ MACRO AND2X1
         RECT 3.450 2.840 3.510 3.010 ;
         RECT 3.220 2.780 3.510 2.840 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN gnd
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -38,7 +38,7 @@ MACRO AND2X1
         RECT 3.220 0.240 3.510 0.320 ;
         RECT 0.000 -0.240 5.760 0.240 ;
     END
-  END vssd1
+  END gnd
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;
