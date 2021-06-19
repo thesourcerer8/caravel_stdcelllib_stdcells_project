@@ -72,7 +72,7 @@ foreach my $origlef (<orig/*.lef>)
   {
     $_.="\n";	  
     $macro=$1 if(m/MACRO\s+(\w+)/);
-    $pin=$1 if(m/PIN (\w+)/);	  
+    $pin=$1 if(m/PIN\s+(\w+)/);
     #s/SYMMETRY X Y R90/SITE unit/;
     #s/SITE CORE/SYMMETRY X Y R90/;
     #s/SITE unit.*//;
@@ -80,7 +80,7 @@ foreach my $origlef (<orig/*.lef>)
     s/VDD/vccd1/;
     s/GND/vssd1/;
     s/USE SIGNAL/USE POWER/ if($pin eq "VDD");
-    s/USE SIGNAL/USE GROUND/ if($pin eq "GND");
+    s/USE POWER/USE GROUND/ if($pin eq "GND"); # GND braucht USE GROUND statt USE POWER
 
     if(m/^\s*END\s+$macro/ && !$filled) # Inject the obstructions here
     {

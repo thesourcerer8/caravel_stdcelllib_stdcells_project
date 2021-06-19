@@ -24,7 +24,7 @@ MACRO NOR2X1
   END vccd1
   PIN vssd1
     DIRECTION INOUT ;
-    USE POWER ;
+    USE GROUND ;
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
