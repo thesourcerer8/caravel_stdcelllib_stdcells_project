@@ -64,18 +64,6 @@ module BUFX2(
 );
 endmodule
 
-module HAX1(
-  inout A, // input
-  inout B, // input
-  inout YC, // output
-  inout YS, // output
-     `ifdef USE_POWER_PINS
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-     `endif
-);
-endmodule
-
 module INV(
   inout A, // input
   inout Y, // output
@@ -208,7 +196,18 @@ module OR2X1(
 );
 endmodule
 
-module XNOR2X1(
+module OR2X2(
+  inout A, // input
+  inout B, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout vdd, // cell power supply
+	inout gnd  // cell ground supply
+     `endif
+);
+endmodule
+
+module XOR2X1(
   inout A, // input
   inout B, // input
   inout Y, // output
