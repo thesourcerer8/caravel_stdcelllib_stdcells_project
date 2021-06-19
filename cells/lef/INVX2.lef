@@ -20,7 +20,7 @@ MACRO INVX2
   END vdd
   PIN gnd
     DIRECTION INOUT ;
-    USE GROUND ;
+    USE POWER ;
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
@@ -33,9 +33,9 @@ MACRO INVX2
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
-        RECT 0.580 2.150 0.870 2.440 ;
-        RECT 0.650 0.690 0.790 2.150 ;
-        RECT 0.580 0.400 0.870 0.690 ;
+        RECT 0.580 2.200 0.870 2.490 ;
+        RECT 0.650 0.730 0.790 2.200 ;
+        RECT 0.580 0.440 0.870 0.730 ;
     END
   END Y
   PIN A
@@ -44,19 +44,19 @@ MACRO INVX2
     SHAPE ABUTMENT ;
     PORT
       LAYER met1 ;
-        RECT 1.300 1.750 1.590 2.040 ;
-        RECT 1.370 1.090 1.510 1.750 ;
-        RECT 1.300 0.800 1.590 1.090 ;
+        RECT 1.300 1.780 1.590 2.070 ;
+        RECT 1.370 1.140 1.510 1.780 ;
+        RECT 1.300 0.850 1.590 1.140 ;
     END
   END A
   OBS
       LAYER li1 ;
-        RECT 1.760 2.810 2.090 3.140 ;
-        RECT 0.560 2.130 0.890 2.460 ;
-        RECT 1.280 1.730 1.610 2.060 ;
-        RECT 1.280 0.780 1.610 1.110 ;
-        RECT 0.560 0.380 0.890 0.710 ;
-        RECT 1.760 0.110 2.090 0.440 ;
+        RECT 1.760 2.760 2.090 3.090 ;
+        RECT 0.560 2.180 0.890 2.510 ;
+        RECT 1.280 1.760 1.610 2.090 ;
+        RECT 1.280 0.830 1.610 1.160 ;
+        RECT 0.560 0.420 0.890 0.750 ;
+        RECT 1.760 0.240 2.090 0.570 ;
   END
 END INVX2
 END LIBRARY

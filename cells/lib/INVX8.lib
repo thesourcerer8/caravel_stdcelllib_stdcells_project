@@ -1,194 +1,51 @@
 library (ls05_stdcells) {
-  capacitive_load_unit (1.0, pf);
-  current_unit: "1uA";
-  default_operating_conditions: typical;
   delay_model: table_lookup;
   in_place_swap_mode: match_footprint;
-  input_threshold_pct_fall: 50.0;
-  input_threshold_pct_rise: 50.0;
-  leakage_power_unit: "1nW";
-  nom_process: 1.0;
-  nom_temperature: 25.0;
-  nom_voltage: 5.0;
-  output_threshold_pct_fall: 50.0;
-  output_threshold_pct_rise: 50.0;
-  pulling_resistance_unit: "1kohm";
-  slew_lower_threshold_pct_fall: 20.0;
-  slew_lower_threshold_pct_rise: 20.0;
-  slew_upper_threshold_pct_fall: 80.0;
-  slew_upper_threshold_pct_rise: 80.0;
   time_unit: "1ns";
   voltage_unit: "1V";
+  current_unit: "1uA";
+  pulling_resistance_unit: "1kohm";
+  leakage_power_unit: "1nW";
+  capacitive_load_unit (1.0, pf);
+  slew_upper_threshold_pct_rise: 80.0;
+  slew_lower_threshold_pct_rise: 20.0;
+  slew_upper_threshold_pct_fall: 80.0;
+  slew_lower_threshold_pct_fall: 20.0;
+  input_threshold_pct_rise: 50.0;
+  input_threshold_pct_fall: 50.0;
+  output_threshold_pct_rise: 50.0;
+  output_threshold_pct_fall: 50.0;
+  nom_process: 1.0;
+  nom_voltage: 5.0;
+  nom_temperature: 25.0;
+  default_operating_conditions: typical;
   operating_conditions (typical) {
     process: 1.0;
-    temperature: 25.0;
     voltage: 5.0;
-  }
-  lu_table_template (delay_template_5x1) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    variable_1: input_net_transition;
+    temperature: 25.0;
   }
   lu_table_template (delay_template_5x5) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
     variable_1: total_output_net_capacitance;
     variable_2: input_net_transition;
-  }
-  lu_table_template (delay_template_5x6) {
     index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
+      "1000.000000, 1001.000000, 1002.000000, 1003.000000, 1004.000000"
     );
     index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
+      "1000.000000, 1001.000000, 1002.000000, 1003.000000, 1004.000000"
     );
-    variable_1: total_output_net_capacitance;
-    variable_2: input_net_transition;
-  }
-  lu_table_template (delay_template_6x1) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: input_net_transition;
-  }
-  lu_table_template (delay_template_6x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: total_output_net_capacitance;
-    variable_2: input_net_transition;
-  }
-  power_lut_template (energy_template_5x5) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    variable_1: total_output_net_capacitance;
-    variable_2: input_transition_time;
-  }
-  power_lut_template (energy_template_5x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: total_output_net_capacitance;
-    variable_2: input_transition_time;
-  }
-  power_lut_template (energy_template_6x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: total_output_net_capacitance;
-    variable_2: input_transition_time;
-  }
-  lu_table_template (hold_template_3x5) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  lu_table_template (hold_template_3x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  power_lut_template (passive_energy_template_5x1) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    variable_1: input_transition_time;
-  }
-  power_lut_template (passive_energy_template_6x1) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: input_transition_time;
-  }
-  lu_table_template (recovery_template_3x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  lu_table_template (recovery_template_6x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  lu_table_template (removal_template_3x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  lu_table_template (setup_template_3x5) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
-  }
-  lu_table_template (setup_template_3x6) {
-    index_1 (
-      "1000.0, 1001.0, 1002.0"
-    );
-    index_2 (
-      "1000.0, 1001.0, 1002.0, 1003.0, 1004.0, 1005.0"
-    );
-    variable_1: related_pin_transition;
-    variable_2: constrained_pin_transition;
   }
   cell (INVX8) {
     area: 274320.0;
     cell_leakage_power: 0.1173;
     pin (A) {
-      capacitance: 0.0252218232768479;
       direction: input;
-      fall_capacitance: 0.02568994035979349;
-      rise_capacitance: 0.024753706193902308;
+      rise_capacitance: 0.02475357794277478;
+      fall_capacitance: 0.025715030488090873;
+      capacitance: 0.025234304215432823;
     }
     pin (Y) {
       direction: output;
+      function: "!(A)";
       function: "(!A)";
       timing () {
         related_pin: "A";
@@ -201,11 +58,11 @@ library (ls05_stdcells) {
             "0.010000, 0.050000, 0.100000, 0.200000, 1.500000"
           );
           values (
-            "0.004711, 0.004036, 0.002690, -0.002338, -0.066683", \
-            "0.013476, 0.015921, 0.017776, 0.016979, -0.030765", \
-            "0.023708, 0.025226, 0.028773, 0.029840, -0.004496", \
-            "0.044997, 0.042811, 0.047615, 0.051364, 0.040057", \
-            "0.220573, 0.210103, 0.201918, 0.196471, 0.273011"
+            "0.004711, 0.003669, 0.002920, -0.001273, -0.067235", \
+            "0.013476, 0.016314, 0.018100, 0.018126, -0.031065", \
+            "0.023686, 0.025560, 0.029154, 0.032104, -0.003570", \
+            "0.045002, 0.042834, 0.047470, 0.054715, 0.040967", \
+            "0.220836, 0.210041, 0.201832, 0.197811, 0.273718"
           );
         }
         cell_fall (delay_template_5x5) {
@@ -216,11 +73,11 @@ library (ls05_stdcells) {
             "0.010000, 0.050000, 0.100000, 0.200000, 1.500000"
           );
           values (
-            "0.005356, 0.008195, 0.011786, 0.017076, 0.086545", \
-            "0.014445, 0.019292, 0.024680, 0.028468, 0.116656", \
-            "0.025140, 0.028622, 0.035186, 0.044099, 0.141159", \
-            "0.046446, 0.047702, 0.053516, 0.064252, 0.179451", \
-            "0.224189, 0.221188, 0.219510, 0.220049, 0.387314"
+            "0.005356, 0.008225, 0.012119, 0.018287, 0.088886", \
+            "0.014445, 0.019534, 0.025707, 0.035382, 0.118985", \
+            "0.025056, 0.028778, 0.035903, 0.047954, 0.142358", \
+            "0.046837, 0.047773, 0.053764, 0.068471, 0.181014", \
+            "0.225616, 0.222601, 0.219861, 0.220213, 0.388011"
           );
         }
         rise_transition (delay_template_5x5) {
@@ -231,11 +88,11 @@ library (ls05_stdcells) {
             "0.010000, 0.050000, 0.100000, 0.200000, 1.500000"
           );
           values (
-            "0.007647, 0.027974, 0.055611, 0.108999, 0.869977", \
-            "0.022594, 0.037470, 0.063051, 0.115180, 0.867738", \
-            "0.039486, 0.049806, 0.072127, 0.121312, 0.866717", \
-            "0.076785, 0.082234, 0.096608, 0.138992, 0.863329", \
-            "0.358088, 0.358712, 0.359243, 0.372101, 0.930596"
+            "0.007647, 0.028925, 0.057669, 0.115805, 0.870247", \
+            "0.022139, 0.037257, 0.061628, 0.115441, 0.868805", \
+            "0.039229, 0.050143, 0.071107, 0.121043, 0.867453", \
+            "0.074441, 0.080027, 0.096405, 0.138670, 0.864852", \
+            "0.357732, 0.357697, 0.358023, 0.371638, 0.931800"
           );
         }
         fall_transition (delay_template_5x5) {
@@ -246,11 +103,11 @@ library (ls05_stdcells) {
             "0.010000, 0.050000, 0.100000, 0.200000, 1.500000"
           );
           values (
-            "0.008160, 0.030855, 0.057683, 0.115626, 0.868400", \
-            "0.027538, 0.041822, 0.066894, 0.123555, 0.870026", \
-            "0.047073, 0.058001, 0.079823, 0.131936, 0.871905", \
-            "0.090912, 0.096720, 0.111536, 0.155787, 0.875627", \
-            "0.433842, 0.432463, 0.434875, 0.448234, 1.015267"
+            "0.008160, 0.030148, 0.056531, 0.115506, 0.870109", \
+            "0.026793, 0.041830, 0.067077, 0.120590, 0.871621", \
+            "0.047212, 0.057977, 0.079852, 0.130476, 0.873241", \
+            "0.089918, 0.095810, 0.111953, 0.155870, 0.877226", \
+            "0.434491, 0.434491, 0.435448, 0.448752, 1.014657"
           );
         }
       }
