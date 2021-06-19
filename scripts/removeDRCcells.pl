@@ -27,6 +27,8 @@ foreach my $mag (<*.mag>)
     unlink "../lef/$cell.lef";
     unlink "../gds/$cell.gds";
     unlink "../lib/$cell.lib";
+    unlink "../cell/$cell.cell";
+    unlink "../sp/$cell.sp";
   }
 
 }
