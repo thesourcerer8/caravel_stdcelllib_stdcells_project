@@ -32,8 +32,8 @@ make pdk        # clone and build pdk
 
 make openlane   # clone and build build openlane
 
-scripts/deploy2caravel.sh
+scripts/deploy2caravel.sh # This takes all the cells from the StdCellLib/Catalog directory and puts them on the Caravel
 
-make user_proj_example
+make user_proj_example # This builds the Caravel
 
 Refer to [README](docs/source/index.rst) for the Caravel documentation. 
