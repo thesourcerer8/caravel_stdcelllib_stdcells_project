@@ -27,7 +27,9 @@ cd caravel_stdcelllib_stdcells_project
 . ./env.sh
 
 make install    # install caravel-lite
+
 make pdk        # clone and build pdk
+
 make openlane   # clone and build build openlane
 
 scripts/deploy2caravel.sh
