@@ -55,9 +55,9 @@ foreach my $origlef (<orig/*.lef>)
   
   my $content=readfile("orig/$lef");
   $content=~s/\sOBS\s.*?\sEND\s//sg;
-  #open OUT,">$lef.temp";
-  #print OUT $content;
-  #close OUT;
+  open OUT,">$lef.temp";
+  print OUT $content;
+  close OUT;
 
   my $cell=$lef; $cell=~s/\.lef//;
   print "$lef\n";

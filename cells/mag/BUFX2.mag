@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1624187970
+timestamp 1624570822
 << nwell >>
 rect 0 179 432 333
 << nmos >>
@@ -79,7 +79,19 @@ rect 280 184 297 201
 rect 136 91 153 108
 rect 280 91 297 108
 << locali >>
-rect 176 299 209 307
+rect 0 342 432 357
+rect 0 325 16 342
+rect 33 325 64 342
+rect 81 325 112 342
+rect 129 325 160 342
+rect 177 325 208 342
+rect 225 325 256 342
+rect 273 325 304 342
+rect 321 325 352 342
+rect 369 325 400 342
+rect 417 325 432 342
+rect 0 309 432 325
+rect 176 299 209 309
 rect 176 282 184 299
 rect 201 282 209 299
 rect 176 274 209 282
@@ -120,8 +132,29 @@ rect 201 34 209 51
 rect 320 50 328 67
 rect 345 50 353 67
 rect 320 42 353 50
-rect 176 26 209 34
+rect 176 24 209 34
+rect 0 9 432 24
+rect 0 -9 16 9
+rect 33 -9 64 9
+rect 81 -9 112 9
+rect 129 -9 160 9
+rect 177 -9 208 9
+rect 225 -9 256 9
+rect 273 -9 304 9
+rect 321 -9 352 9
+rect 369 -9 400 9
+rect 417 -9 432 9
+rect 0 -24 432 -9
 << viali >>
+rect 16 325 33 342
+rect 64 325 81 342
+rect 112 325 129 342
+rect 160 325 177 342
+rect 208 325 225 342
+rect 256 325 273 342
+rect 304 325 321 342
+rect 352 325 369 342
+rect 400 325 417 342
 rect 184 282 201 299
 rect 64 226 81 243
 rect 328 226 345 243
@@ -132,8 +165,28 @@ rect 280 91 297 108
 rect 64 50 81 67
 rect 184 34 201 51
 rect 328 50 345 67
+rect 16 -9 33 9
+rect 64 -9 81 9
+rect 112 -9 129 9
+rect 160 -9 177 9
+rect 208 -9 225 9
+rect 256 -9 273 9
+rect 304 -9 321 9
+rect 352 -9 369 9
+rect 400 -9 417 9
 << metal1 >>
-rect 0 309 432 357
+rect 0 342 432 357
+rect 0 325 16 342
+rect 33 325 64 342
+rect 81 325 112 342
+rect 129 325 160 342
+rect 177 325 208 342
+rect 225 325 256 342
+rect 273 325 304 342
+rect 321 325 352 342
+rect 369 325 400 342
+rect 417 325 432 342
+rect 0 309 432 325
 rect 178 299 207 309
 rect 178 282 184 299
 rect 201 282 207 299
@@ -181,24 +234,39 @@ rect 322 50 328 67
 rect 345 50 351 67
 rect 322 44 351 50
 rect 178 24 207 34
-rect 0 -24 432 24
+rect 0 9 432 24
+rect 0 -9 16 9
+rect 33 -9 64 9
+rect 81 -9 112 9
+rect 129 -9 160 9
+rect 177 -9 208 9
+rect 225 -9 256 9
+rect 273 -9 304 9
+rect 321 -9 352 9
+rect 369 -9 400 9
+rect 417 -9 432 9
+rect 0 -24 432 -9
 << labels >>
-rlabel metal1 0 309 432 357 0 VDD
-port 1 se
-rlabel metal1 0 -24 432 24 0 GND
-port 2 se
-rlabel metal1 322 44 351 73 0 Y
-port 3 se
 rlabel metal1 329 73 343 220 0 Y
-port 4 se
-rlabel metal1 322 220 351 249 0 Y
-port 5 se
-rlabel metal1 130 85 159 114 0 A
 port 6 se
 rlabel metal1 137 114 151 139 0 A
+port 9 se
+rlabel locali 0 309 432 357 0 VDD
+port 1 se
+rlabel metal1 0 309 432 357 0 VDD
+port 2 se
+rlabel locali 0 -24 432 24 0 GND
+port 3 se
+rlabel metal1 0 -24 432 24 0 GND
+port 4 se
+rlabel metal1 322 44 351 73 0 Y
+port 5 se
+rlabel metal1 322 220 351 249 0 Y
 port 7 se
-rlabel metal1 130 139 159 168 0 A
+rlabel metal1 130 85 159 114 0 A
 port 8 se
+rlabel metal1 130 139 159 168 0 A
+port 10 se
 << properties >>
 string FIXED_BBOX 0 0 432 333
 << end >>
