@@ -19,6 +19,7 @@ foreach my $mag (<*.mag>)
     print "Warning: Could not find DRC: $STDCELLLIB/$cell.drc $!\n";
     $drc=1;
   }
+  $drc=1 if(!-f "$STDCELLLIB/Catalog/$cell.mag");
   if($drc)
   {
     print "Removing cell with $drc DRC issues: $cell\n";
