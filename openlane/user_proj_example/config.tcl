@@ -68,3 +68,5 @@ set ::env(ROOT_CLK_BUFFER) "sky130_fd_sc_ls__clkbuf_16"
 set ::env(CLK_BUFFER) "sky130_fd_sc_ls__clkbuf_4"
 set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_ls"
 
+# set ::env(GLB_RT_OBS) "met2 0 3519 2920 3540" # Might be needed for precheck
+

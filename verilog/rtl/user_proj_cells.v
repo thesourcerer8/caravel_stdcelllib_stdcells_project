@@ -104,16 +104,6 @@ module INVX4(
 );
 endmodule
 
-module INVX8(
-  inout A, // input
-  inout Y, // output
-     `ifdef USE_POWER_PINS
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-     `endif
-);
-endmodule
-
 module MUX2X1(
   inout A, // input
   inout B, // input
@@ -160,42 +150,6 @@ module NOR2X1(
 );
 endmodule
 
-module OAI21X1(
-  inout A, // input
-  inout B, // input
-  inout C, // input
-  inout Y, // output
-     `ifdef USE_POWER_PINS
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-     `endif
-);
-endmodule
-
-module OAI22X1(
-  inout A, // input
-  inout B, // input
-  inout C, // input
-  inout D, // input
-  inout Y, // output
-     `ifdef USE_POWER_PINS
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-     `endif
-);
-endmodule
-
-module OR2X1(
-  inout A, // input
-  inout B, // input
-  inout Y, // output
-     `ifdef USE_POWER_PINS
-	inout vdd, // cell power supply
-	inout gnd  // cell ground supply
-     `endif
-);
-endmodule
-
 module OR2X2(
   inout A, // input
   inout B, // input
@@ -207,7 +161,7 @@ module OR2X2(
 );
 endmodule
 
-module XOR2X1(
+module XNOR2X1(
   inout A, // input
   inout B, // input
   inout Y, // output
