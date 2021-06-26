@@ -2,3 +2,4 @@ git add cells/ def/user_proj_example.def lef/user_proj_example.lef openlane/user
 git add gds/user_proj_example.gds.gz 
 git add gds/user_project_wrapper.gds.gz 
 git add mag/user_project_wrapper.mag 
+git add maglef/user_proj_example.mag spi/lvs/user_proj_example.spice verilog/gl/user_proj_example.v verilog/dv
