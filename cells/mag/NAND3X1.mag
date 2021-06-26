@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1624571037
+timestamp 1624703321
 << nwell >>
 rect 0 179 576 333
 << nmos >>
@@ -157,8 +157,7 @@ rect 56 42 89 50
 rect 464 51 497 59
 rect 464 34 472 51
 rect 489 34 497 51
-rect 464 26 497 34
-rect 447 24 514 26
+rect 464 24 497 34
 rect 0 9 576 24
 rect 0 -9 16 9
 rect 33 -9 64 9
@@ -298,14 +297,6 @@ rect 513 -9 544 9
 rect 561 -9 576 9
 rect 0 -24 576 -9
 << labels >>
-rlabel metal1 65 73 79 220 0 Y
-port 6 se
-rlabel metal1 281 114 295 178 0 B
-port 13 se
-rlabel metal1 425 114 439 178 0 A
-port 16 se
-rlabel metal1 137 114 151 178 0 C
-port 19 se
 rlabel locali 0 309 576 357 0 VDD
 port 1 se
 rlabel metal1 0 309 576 357 0 VDD
@@ -316,6 +307,8 @@ rlabel metal1 0 -24 576 24 0 GND
 port 4 se
 rlabel metal1 58 44 87 73 0 Y
 port 5 se
+rlabel metal1 65 73 79 220 0 Y
+port 6 se
 rlabel metal1 58 220 87 227 0 Y
 port 7 se
 rlabel metal1 322 220 351 227 0 Y
@@ -326,17 +319,23 @@ rlabel metal1 58 241 87 249 0 Y
 port 10 se
 rlabel metal1 322 241 351 249 0 Y
 port 11 se
-rlabel metal1 274 85 303 114 0 B
-port 12 se
-rlabel metal1 274 178 303 207 0 B
-port 14 se
-rlabel metal1 418 85 447 114 0 A
-port 15 se
-rlabel metal1 418 178 447 207 0 A
-port 17 se
 rlabel metal1 130 85 159 114 0 C
-port 18 se
+port 12 se
+rlabel metal1 137 114 151 178 0 C
+port 13 se
 rlabel metal1 130 178 159 207 0 C
+port 14 se
+rlabel metal1 274 85 303 114 0 B
+port 15 se
+rlabel metal1 281 114 295 178 0 B
+port 16 se
+rlabel metal1 274 178 303 207 0 B
+port 17 se
+rlabel metal1 418 85 447 114 0 A
+port 18 se
+rlabel metal1 425 114 439 178 0 A
+port 19 se
+rlabel metal1 418 178 447 207 0 A
 port 20 se
 << properties >>
 string FIXED_BBOX 0 0 576 333

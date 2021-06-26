@@ -64,6 +64,26 @@ module BUFX2(
 );
 endmodule
 
+module BUFX4(
+  inout A, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout vdd, // cell power supply
+	inout gnd  // cell ground supply
+     `endif
+);
+endmodule
+
+module CLKBUF1(
+  inout A, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout vdd, // cell power supply
+	inout gnd  // cell ground supply
+     `endif
+);
+endmodule
+
 module INV(
   inout A, // input
   inout Y, // output
@@ -95,6 +115,16 @@ module INVX2(
 endmodule
 
 module INVX4(
+  inout A, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout vdd, // cell power supply
+	inout gnd  // cell ground supply
+     `endif
+);
+endmodule
+
+module INVX8(
   inout A, // input
   inout Y, // output
      `ifdef USE_POWER_PINS
@@ -139,7 +169,7 @@ module NAND3X1(
 );
 endmodule
 
-module NOR2X1(
+module OR2X1(
   inout A, // input
   inout B, // input
   inout Y, // output

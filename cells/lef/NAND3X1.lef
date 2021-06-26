@@ -55,8 +55,7 @@ MACRO NAND3X1
         RECT 4.640 0.510 4.970 0.590 ;
         RECT 4.640 0.340 4.720 0.510 ;
         RECT 4.890 0.340 4.970 0.510 ;
-        RECT 4.640 0.260 4.970 0.340 ;
-        RECT 4.470 0.240 5.140 0.260 ;
+        RECT 4.640 0.240 4.970 0.340 ;
         RECT 0.000 -0.240 5.760 0.240 ;
     END
   END gnd
@@ -75,6 +74,17 @@ MACRO NAND3X1
         RECT 0.580 0.440 0.870 0.730 ;
     END
   END Y
+  PIN C
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 1.300 1.780 1.590 2.070 ;
+        RECT 1.370 1.140 1.510 1.780 ;
+        RECT 1.300 0.850 1.590 1.140 ;
+    END
+  END C
   PIN B
     DIRECTION INOUT ;
     USE SIGNAL ;
@@ -97,17 +107,6 @@ MACRO NAND3X1
         RECT 4.180 0.850 4.470 1.140 ;
     END
   END A
-  PIN C
-    DIRECTION INOUT ;
-    USE SIGNAL ;
-    SHAPE ABUTMENT ;
-    PORT
-      LAYER met1 ;
-        RECT 1.300 1.780 1.590 2.070 ;
-        RECT 1.370 1.140 1.510 1.780 ;
-        RECT 1.300 0.850 1.590 1.140 ;
-    END
-  END C
   OBS
       LAYER li1 ;
         RECT 0.560 2.430 0.890 2.510 ;

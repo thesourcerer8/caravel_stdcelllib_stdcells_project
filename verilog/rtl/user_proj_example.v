@@ -91,7 +91,7 @@ BUFX2 BUFX2(
   .A(io_in[15]),
   .Y(io_out[16]),
 );
-INV INV(
+BUFX4 BUFX4(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -99,7 +99,7 @@ INV INV(
   .A(io_in[17]),
   .Y(io_out[18]),
 );
-INVX1 INVX1(
+CLKBUF1 CLKBUF1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -107,7 +107,7 @@ INVX1 INVX1(
   .A(io_in[19]),
   .Y(io_out[20]),
 );
-INVX2 INVX2(
+INV INV(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -115,7 +115,7 @@ INVX2 INVX2(
   .A(io_in[21]),
   .Y(io_out[22]),
 );
-INVX4 INVX4(
+INVX1 INVX1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -123,54 +123,60 @@ INVX4 INVX4(
   .A(io_in[23]),
   .Y(io_out[24]),
 );
-MUX2X1 MUX2X1(
+INVX2 INVX2(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
   .A(io_in[25]),
-  .B(io_in[26]),
-  .S(io_in[27]),
+  .Y(io_out[26]),
+);
+INVX4 INVX4(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(io_in[27]),
   .Y(io_out[28]),
+);
+INVX8 INVX8(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(io_in[29]),
+  .Y(io_out[30]),
+);
+MUX2X1 MUX2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(io_in[31]),
+  .B(io_in[32]),
+  .S(io_in[33]),
+  .Y(io_out[34]),
 );
 NAND2X1 NAND2X1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .A(io_in[29]),
-  .B(io_in[30]),
-  .Y(io_out[31]),
+  .A(io_in[35]),
+  .B(io_in[36]),
+  .Y(io_out[37]),
 );
 NAND3X1 NAND3X1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
  `endif
-  .A(io_in[32]),
-  .B(io_in[33]),
-  .C(io_in[34]),
-  .Y(io_out[35]),
-);
-NOR2X1 NOR2X1(
- `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
- `endif
-  .A(io_in[36]),
-  .B(io_in[37]),
-  .Y(la_data_out[0]),
-);
-OR2X2 OR2X2(
- `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
- `endif
-  .A(la_data_in[1]),
-  .B(la_data_in[2]),
+  .A(la_data_in[0]),
+  .B(la_data_in[1]),
+  .C(la_data_in[2]),
   .Y(la_data_out[3]),
 );
-XNOR2X1 XNOR2X1(
+OR2X1 OR2X1(
  `ifdef USE_POWER_PINS
   .vdd(vccd1),
   .gnd(vssd1),
@@ -178,6 +184,24 @@ XNOR2X1 XNOR2X1(
   .A(la_data_in[4]),
   .B(la_data_in[5]),
   .Y(la_data_out[6]),
+);
+OR2X2 OR2X2(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[7]),
+  .B(la_data_in[8]),
+  .Y(la_data_out[9]),
+);
+XNOR2X1 XNOR2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[10]),
+  .B(la_data_in[11]),
+  .Y(la_data_out[12]),
 );
 assign io_oeb[0] = 1'b1;
 assign io_oeb[1] = 1'b1;
@@ -205,16 +229,16 @@ assign io_oeb[22] = 1'b0;
 assign io_oeb[23] = 1'b1;
 assign io_oeb[24] = 1'b0;
 assign io_oeb[25] = 1'b1;
-assign io_oeb[26] = 1'b1;
+assign io_oeb[26] = 1'b0;
 assign io_oeb[27] = 1'b1;
 assign io_oeb[28] = 1'b0;
 assign io_oeb[29] = 1'b1;
-assign io_oeb[30] = 1'b1;
-assign io_oeb[31] = 1'b0;
+assign io_oeb[30] = 1'b0;
+assign io_oeb[31] = 1'b1;
 assign io_oeb[32] = 1'b1;
 assign io_oeb[33] = 1'b1;
-assign io_oeb[34] = 1'b1;
-assign io_oeb[35] = 1'b0;
+assign io_oeb[34] = 1'b0;
+assign io_oeb[35] = 1'b1;
 assign io_oeb[36] = 1'b1;
-assign io_oeb[37] = 1'b1;
+assign io_oeb[37] = 1'b0;
 endmodule

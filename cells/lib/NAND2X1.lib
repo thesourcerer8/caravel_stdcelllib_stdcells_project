@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (NAND2X1) {
-    area: 1592644.0;
+    area: 164592.0;
     cell_leakage_power: 0.1173;
     pin (B) {
       direction: input;

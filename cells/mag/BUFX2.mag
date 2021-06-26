@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1624570822
+timestamp 1624702717
 << nwell >>
 rect 0 179 432 333
 << nmos >>
@@ -111,7 +111,7 @@ rect 272 201 303 209
 rect 272 184 280 201
 rect 297 184 305 201
 rect 272 176 305 184
-rect 136 162 153 176
+rect 136 116 153 131
 rect 128 108 161 116
 rect 128 91 136 108
 rect 153 91 161 108
@@ -158,9 +158,9 @@ rect 400 325 417 342
 rect 184 282 201 299
 rect 64 226 81 243
 rect 328 226 345 243
+rect 136 184 153 201
 rect 280 184 297 201
-rect 136 145 153 162
-rect 136 91 153 108
+rect 136 131 153 148
 rect 280 91 297 108
 rect 64 50 81 67
 rect 184 34 201 51
@@ -199,26 +199,26 @@ rect 322 243 351 249
 rect 322 226 328 243
 rect 345 226 351 243
 rect 322 220 351 226
-rect 65 200 79 220
+rect 65 106 79 220
+rect 130 201 159 207
+rect 130 184 136 201
+rect 153 184 159 201
+rect 130 178 159 184
 rect 274 201 303 207
-rect 274 200 280 201
-rect 65 186 280 200
-rect 65 73 79 186
-rect 274 184 280 186
+rect 274 184 280 201
 rect 297 184 303 201
 rect 274 178 303 184
-rect 130 162 159 168
-rect 130 145 136 162
-rect 153 145 159 162
-rect 130 139 159 145
-rect 137 114 151 139
+rect 137 154 151 178
+rect 130 148 159 154
+rect 130 131 136 148
+rect 153 131 159 148
+rect 130 125 159 131
 rect 281 114 295 178
-rect 130 108 159 114
-rect 130 91 136 108
-rect 153 91 159 108
-rect 130 85 159 91
 rect 274 108 303 114
-rect 274 91 280 108
+rect 274 106 280 108
+rect 65 92 280 106
+rect 65 73 79 92
+rect 274 91 280 92
 rect 297 91 303 108
 rect 274 85 303 91
 rect 329 73 343 220
@@ -247,10 +247,6 @@ rect 369 -9 400 9
 rect 417 -9 432 9
 rect 0 -24 432 -9
 << labels >>
-rlabel metal1 329 73 343 220 0 Y
-port 6 se
-rlabel metal1 137 114 151 139 0 A
-port 9 se
 rlabel locali 0 309 432 357 0 VDD
 port 1 se
 rlabel metal1 0 309 432 357 0 VDD
@@ -261,11 +257,15 @@ rlabel metal1 0 -24 432 24 0 GND
 port 4 se
 rlabel metal1 322 44 351 73 0 Y
 port 5 se
+rlabel metal1 329 73 343 220 0 Y
+port 6 se
 rlabel metal1 322 220 351 249 0 Y
 port 7 se
-rlabel metal1 130 85 159 114 0 A
+rlabel metal1 130 125 159 154 0 A
 port 8 se
-rlabel metal1 130 139 159 168 0 A
+rlabel metal1 137 154 151 178 0 A
+port 9 se
+rlabel metal1 130 178 159 207 0 A
 port 10 se
 << properties >>
 string FIXED_BBOX 0 0 432 333
