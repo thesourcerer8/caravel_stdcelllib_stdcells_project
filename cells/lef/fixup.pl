@@ -31,8 +31,13 @@ foreach my $origlef (<orig/*.lef>)
   {
     print "Extracting Obstruction information from $mag\n";	  
     my $active=0;
+    my $factor=100.0;
     while(<MAGIN>)
     {
+      if(m/magscale (\d+) (\d+)/)
+      {
+        $factor=100.0*$2;
+      }
       if(m/<< (\w+) >>/)
       {
         $active=defined($layersToDo{$1});
@@ -40,7 +45,7 @@ foreach my $origlef (<orig/*.lef>)
       }
       if(m/rect (-?\d+) (-?\d+) (-?\d+) (-?\d+)/ && $active)
       {
-        $obs.="      RECT ( ".($1/100.0)." ".($2/100.0)." ) ( ".($3/100.0)." ".($4/100.0)." ) ;\n";
+        $obs.="      RECT ( ".($1/$factor)." ".($2/$factor)." ) ( ".($3/$factor)." ".($4/$factor)." ) ;\n";
       }
     }
     close MAGIN;
