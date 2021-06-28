@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1624887580
+timestamp 1624892577
 << checkpaint >>
 rect -1260 -1374 11260 2038
 << nwell >>
@@ -244,29 +244,29 @@ rect 833 -17 864 17
 rect 0 -48 864 -17
 << labels >>
 rlabel metal1 0 618 864 714 0 VDD
-port 1 se
+port 2 se
 rlabel metal1 0 618 864 714 0 VDD
 port 2 se
 rlabel metal1 0 -48 864 48 0 GND
-port 3 se
+port 1 se
 rlabel metal1 0 -48 864 48 0 GND
-port 4 se
+port 1 se
 rlabel metal1 643 88 701 146 0 Y
-port 5 se
+port 3 se
 rlabel metal1 658 146 686 439 0 Y
-port 6 se
+port 3 se
 rlabel metal1 643 439 701 497 0 Y
-port 7 se
+port 3 se
 rlabel metal1 259 169 317 227 0 A
-port 8 se
+port 0 se
 rlabel locali 0 -17 864 17 4 GND
-port 3 se
+port 1 se ground default abutment
 rlabel locali 31 17 833 48 4 GND
-port 3 se
+port 1 se ground default abutment
 rlabel locali 0 649 864 683 4 VDD
-port 1 se
+port 2 se power default abutment
 rlabel locali 31 618 833 649 4 VDD
-port 1 se
+port 2 se power default abutment
 << properties >>
 string FIXED_BBOX 0 0 864 666
 << end >>

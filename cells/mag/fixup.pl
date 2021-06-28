@@ -38,17 +38,28 @@ erase locali
 box 0 -17 $width 17
 label GND se locali
 port make
+port use ground
+port shape abutment
+
 box 31 17 $min 48
 label GND se locali
 port make
+port use ground
+port shape abutment
 
 box 0 649 $width 683
 label VDD se locali
 port make
+port use power
+port shape abutment
+
 box 31 618 $min 649
 label VDD se locali
 port make
+port use power
+port shape abutment
 
+port renumber
 save
 gds
 quit
