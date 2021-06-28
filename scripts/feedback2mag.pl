@@ -21,6 +21,7 @@ while(<STDIN>)
 {
   if(m/box (-?\d+) (-?\d+) (-?\d+) (-?\d+)/)
   {
-    print "rect ".int($1/100)." ".int($2/100)." ".int($3/100)." ".int($4/100)."\n";
+    print "rect ".int($1/1)." ".int($2/1)." ".int($3/1)." ".int($4/1)."\n";
   }
 }
+print "<< end >>\n";
