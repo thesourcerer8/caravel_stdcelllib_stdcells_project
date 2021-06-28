@@ -202,3 +202,14 @@ module XNOR2X1(
 );
 endmodule
 
+module XOR2X1(
+  inout A, // input
+  inout B, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout vdd, // cell power supply
+	inout gnd  // cell ground supply
+     `endif
+);
+endmodule
+

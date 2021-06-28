@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (AND2X1) {
-    area: 219456.0;
+    area: 877824.0;
     cell_leakage_power: 0.1173;
     pin (B) {
       direction: input;

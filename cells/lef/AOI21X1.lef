@@ -62,6 +62,17 @@ MACRO AOI21X1
         RECT 4.660 0.440 4.950 0.520 ;
     END
   END Y
+  PIN A
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 2.740 1.780 3.030 2.070 ;
+        RECT 2.810 1.140 2.950 1.780 ;
+        RECT 2.740 0.850 3.030 1.140 ;
+    END
+  END A
   PIN C
     DIRECTION INOUT ;
     USE SIGNAL ;
@@ -84,17 +95,6 @@ MACRO AOI21X1
         RECT 4.180 0.850 4.470 1.140 ;
     END
   END B
-  PIN A
-    DIRECTION INOUT ;
-    USE SIGNAL ;
-    SHAPE ABUTMENT ;
-    PORT
-      LAYER met1 ;
-        RECT 2.740 1.780 3.030 2.070 ;
-        RECT 2.810 1.140 2.950 1.780 ;
-        RECT 2.740 0.850 3.030 1.140 ;
-    END
-  END A
   OBS
       LAYER li1 ;
         RECT 0.560 2.430 0.890 2.510 ;

@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (INVX8) {
-    area: 274320.0;
+    area: 1097280.0;
     cell_leakage_power: 0.1173;
     pin (A) {
       direction: input;

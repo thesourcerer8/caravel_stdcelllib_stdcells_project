@@ -82,17 +82,6 @@ MACRO MUX2X1
         RECT 5.140 0.440 5.430 0.520 ;
     END
   END Y
-  PIN B
-    DIRECTION INOUT ;
-    USE SIGNAL ;
-    SHAPE ABUTMENT ;
-    PORT
-      LAYER met1 ;
-        RECT 7.060 1.780 7.350 2.070 ;
-        RECT 7.130 1.140 7.270 1.780 ;
-        RECT 7.060 0.850 7.350 1.140 ;
-    END
-  END B
   PIN S
     DIRECTION INOUT ;
     USE SIGNAL ;
@@ -117,6 +106,17 @@ MACRO MUX2X1
         RECT 2.740 1.250 3.030 1.540 ;
     END
   END A
+  PIN B
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 7.060 1.780 7.350 2.070 ;
+        RECT 7.130 1.140 7.270 1.780 ;
+        RECT 7.060 0.850 7.350 1.140 ;
+    END
+  END B
   OBS
       LAYER li1 ;
         RECT 0.560 2.430 0.890 2.510 ;

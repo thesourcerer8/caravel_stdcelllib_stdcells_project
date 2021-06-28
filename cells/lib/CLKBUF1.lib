@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (CLKBUF1) {
-    area: 493776.0;
+    area: 1975104.0;
     cell_leakage_power: 0.1173;
     pin (A) {
       direction: input;

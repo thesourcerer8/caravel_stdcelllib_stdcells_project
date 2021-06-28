@@ -203,6 +203,15 @@ XNOR2X1 XNOR2X1(
   .B(la_data_in[11]),
   .Y(la_data_out[12]),
 );
+XOR2X1 XOR2X1(
+ `ifdef USE_POWER_PINS
+  .vdd(vccd1),
+  .gnd(vssd1),
+ `endif
+  .A(la_data_in[13]),
+  .B(la_data_in[14]),
+  .Y(la_data_out[15]),
+);
 assign io_oeb[0] = 1'b1;
 assign io_oeb[1] = 1'b1;
 assign io_oeb[2] = 1'b0;

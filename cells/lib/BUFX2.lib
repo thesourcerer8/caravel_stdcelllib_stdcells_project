@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (BUFX2) {
-    area: 164592.0;
+    area: 658368.0;
     cell_leakage_power: 0.1173;
     pin (A) {
       direction: input;

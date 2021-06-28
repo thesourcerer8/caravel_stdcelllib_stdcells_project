@@ -35,7 +35,7 @@ library (ls05_stdcells) {
     );
   }
   cell (MUX2X1) {
-    area: 329184.0;
+    area: 1316736.0;
     cell_leakage_power: 0.1173;
     pin (S) {
       direction: input;
