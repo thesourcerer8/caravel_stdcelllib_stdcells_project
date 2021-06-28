@@ -46,6 +46,9 @@ perl fixup.pl
 cd $CARAVEL/cells/mag
 perl fixup.pl
 
+cd $CARAVEL/cells/sp
+perl fixup.pl
+
 cd $CARAVEL/cells/lib
 rm -f libresilicon.lib new.lib
 libertymerge -b $STDCELLLIB/Catalog/libresilicon.libtemplate -o libresilicon.lib -u *.lib
