@@ -56,8 +56,8 @@ foreach my $mag(sort <$STDCELLLIB/Catalog/*.mag>)
   }
   close CELL;
   print "     \`ifdef USE_POWER_PINS\n";
-  print "	inout vdd, // cell power supply\n";
-  print "	inout gnd  // cell ground supply\n";
+  print "	inout VPWR, // cell power supply\n";
+  print "	inout VGND  // cell ground supply\n";
   print "     \`endif\n";
   print ");\n";
   print "endmodule\n\n";

@@ -73,8 +73,8 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
   open CELL,"<$cell";
   print "$name $name(\n";
   print " `ifdef USE_POWER_PINS\n";
-  print "  \.vdd(vccd1),\n"; # ??? Should we do 3.3V or 1.8V ?
-  print "  \.gnd(vssd1),\n";
+  print "  \.VPWR(vccd1),\n"; # ??? Should we do 3.3V or 1.8V ?
+  print "  \.VGND(vssd1),\n";
   print " `endif\n";
 
 
