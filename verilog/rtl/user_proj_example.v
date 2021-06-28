@@ -46,8 +46,8 @@ module user_proj_example #(
 
 AND2X1 AND2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[0]),
   .B(io_in[1]),
@@ -55,8 +55,8 @@ AND2X1 AND2X1(
 );
 AND2X2 AND2X2(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[3]),
   .B(io_in[4]),
@@ -64,8 +64,8 @@ AND2X2 AND2X2(
 );
 AOI21X1 AOI21X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[6]),
   .B(io_in[7]),
@@ -74,8 +74,8 @@ AOI21X1 AOI21X1(
 );
 AOI22X1 AOI22X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[10]),
   .B(io_in[11]),
@@ -85,72 +85,72 @@ AOI22X1 AOI22X1(
 );
 BUFX2 BUFX2(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[15]),
   .Y(io_out[16]),
 );
 BUFX4 BUFX4(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[17]),
   .Y(io_out[18]),
 );
 CLKBUF1 CLKBUF1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[19]),
   .Y(io_out[20]),
 );
 INV INV(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[21]),
   .Y(io_out[22]),
 );
 INVX1 INVX1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[23]),
   .Y(io_out[24]),
 );
 INVX2 INVX2(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[25]),
   .Y(io_out[26]),
 );
 INVX4 INVX4(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[27]),
   .Y(io_out[28]),
 );
 INVX8 INVX8(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[29]),
   .Y(io_out[30]),
 );
 MUX2X1 MUX2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[31]),
   .B(io_in[32]),
@@ -159,8 +159,8 @@ MUX2X1 MUX2X1(
 );
 NAND2X1 NAND2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(io_in[35]),
   .B(io_in[36]),
@@ -168,8 +168,8 @@ NAND2X1 NAND2X1(
 );
 NAND3X1 NAND3X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(la_data_in[0]),
   .B(la_data_in[1]),
@@ -178,8 +178,8 @@ NAND3X1 NAND3X1(
 );
 OR2X1 OR2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(la_data_in[4]),
   .B(la_data_in[5]),
@@ -187,8 +187,8 @@ OR2X1 OR2X1(
 );
 OR2X2 OR2X2(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(la_data_in[7]),
   .B(la_data_in[8]),
@@ -196,8 +196,8 @@ OR2X2 OR2X2(
 );
 XNOR2X1 XNOR2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(la_data_in[10]),
   .B(la_data_in[11]),
@@ -205,8 +205,8 @@ XNOR2X1 XNOR2X1(
 );
 XOR2X1 XOR2X1(
  `ifdef USE_POWER_PINS
-  .vdd(vccd1),
-  .gnd(vssd1),
+  .VPWR(vccd1),
+  .VGND(vssd1),
  `endif
   .A(la_data_in[13]),
   .B(la_data_in[14]),

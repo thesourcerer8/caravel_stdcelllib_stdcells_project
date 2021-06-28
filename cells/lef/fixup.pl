@@ -82,10 +82,10 @@ foreach my $origlef (<orig/*.lef>)
     #s/SITE CORE/SYMMETRY X Y R90/;
     #s/SITE unit.*//;
     s/metal2/met1/;
-    s/VDD/vdd/;
-    s/GND/gnd/;
-    s/USE SIGNAL/USE POWER/ if($pin eq "VDD");
-    s/USE POWER/USE GROUND/ if($pin eq "GND"); # GND braucht USE GROUND statt USE POWER
+    s/VDD/VPWR/;
+    s/GND/VGND/;
+    s/USE SIGNAL/USE POWER/ if($pin eq "VDD" || $pin eq "VPWR");
+    s/USE POWER/USE GROUND/ if($pin eq "GND" || $pin eq "VGND"); # GND braucht USE GROUND statt USE POWER
 
     if(m/^\s*END\s+$macro/ && !$filled) # Inject the obstructions here
     {

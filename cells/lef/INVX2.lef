@@ -9,7 +9,7 @@ MACRO INVX2
   SIZE 2.880 BY 3.330 ;
   SYMMETRY X Y R90 ;
   SITE unit ;
-  PIN vdd
+  PIN VPWR
     DIRECTION INOUT ;
     USE POWER ;
     SHAPE ABUTMENT ;
@@ -17,8 +17,8 @@ MACRO INVX2
       LAYER met1 ;
         RECT 0.000 3.090 2.880 3.570 ;
     END
-  END vdd
-  PIN gnd
+  END VPWR
+  PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
     SHAPE ABUTMENT ;
@@ -26,7 +26,7 @@ MACRO INVX2
       LAYER met1 ;
         RECT 0.000 -0.240 2.880 0.240 ;
     END
-  END gnd
+  END VGND
   PIN Y
     DIRECTION INOUT ;
     USE SIGNAL ;

@@ -1,0 +1,158 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO NAND3X1
+  CLASS CORE ;
+  FOREIGN NAND3X1 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 5.760 BY 3.330 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN A
+    ANTENNAGATEAREA 0.189000 ;
+    PORT
+      LAYER met1 ;
+        RECT 4.175 1.780 4.465 2.070 ;
+        RECT 4.250 1.135 4.390 1.780 ;
+        RECT 4.175 0.845 4.465 1.135 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 4.155 1.760 4.485 2.090 ;
+      LAYER mcon ;
+        RECT 4.235 1.840 4.405 2.010 ;
+    END
+  END A
+  PIN B
+    ANTENNAGATEAREA 0.189000 ;
+    PORT
+      LAYER met1 ;
+        RECT 2.735 1.780 3.025 2.070 ;
+        RECT 2.810 1.135 2.950 1.780 ;
+        RECT 2.735 0.845 3.025 1.135 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 2.715 2.005 3.025 2.090 ;
+        RECT 2.715 1.760 3.045 2.005 ;
+      LAYER mcon ;
+        RECT 2.795 1.840 2.965 2.010 ;
+    END
+  END B
+  PIN C
+    ANTENNAGATEAREA 0.189000 ;
+    PORT
+      LAYER met1 ;
+        RECT 1.295 1.780 1.585 2.070 ;
+        RECT 1.370 1.135 1.510 1.780 ;
+        RECT 1.295 0.845 1.585 1.135 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 1.275 1.760 1.605 2.090 ;
+      LAYER mcon ;
+        RECT 1.355 1.840 1.525 2.010 ;
+    END
+  END C
+  PIN VGND
+    ANTENNADIFFAREA 0.331800 ;
+    PORT
+      LAYER met1 ;
+        RECT 4.655 0.240 4.945 0.570 ;
+        RECT 0.000 -0.240 5.760 0.240 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 4.635 0.240 4.965 0.590 ;
+        RECT 0.155 0.085 5.605 0.240 ;
+        RECT 0.000 -0.085 5.760 0.085 ;
+      LAYER mcon ;
+        RECT 4.715 0.340 4.885 0.510 ;
+        RECT 0.155 -0.085 0.325 0.085 ;
+        RECT 0.635 -0.085 0.805 0.085 ;
+        RECT 1.115 -0.085 1.285 0.085 ;
+        RECT 1.595 -0.085 1.765 0.085 ;
+        RECT 2.075 -0.085 2.245 0.085 ;
+        RECT 2.555 -0.085 2.725 0.085 ;
+        RECT 3.035 -0.085 3.205 0.085 ;
+        RECT 3.515 -0.085 3.685 0.085 ;
+        RECT 3.995 -0.085 4.165 0.085 ;
+        RECT 4.475 -0.085 4.645 0.085 ;
+        RECT 4.955 -0.085 5.125 0.085 ;
+        RECT 5.435 -0.085 5.605 0.085 ;
+    END
+    PORT
+      LAYER met1 ;
+        RECT 0.000 3.090 5.760 3.570 ;
+        RECT 1.775 2.760 2.065 3.090 ;
+        RECT 4.655 2.760 4.945 3.090 ;
+    END
+  END VGND
+  PIN VPWR
+    ANTENNADIFFAREA 1.747200 ;
+    PORT
+      LAYER li1 ;
+        RECT 0.000 3.245 5.760 3.415 ;
+        RECT 0.155 3.090 5.605 3.245 ;
+        RECT 1.755 2.740 2.085 3.090 ;
+        RECT 4.635 2.740 4.965 3.090 ;
+      LAYER mcon ;
+        RECT 0.155 3.245 0.325 3.415 ;
+        RECT 0.635 3.245 0.805 3.415 ;
+        RECT 1.115 3.245 1.285 3.415 ;
+        RECT 1.595 3.245 1.765 3.415 ;
+        RECT 2.075 3.245 2.245 3.415 ;
+        RECT 2.555 3.245 2.725 3.415 ;
+        RECT 3.035 3.245 3.205 3.415 ;
+        RECT 3.515 3.245 3.685 3.415 ;
+        RECT 3.995 3.245 4.165 3.415 ;
+        RECT 4.475 3.245 4.645 3.415 ;
+        RECT 4.955 3.245 5.125 3.415 ;
+        RECT 5.435 3.245 5.605 3.415 ;
+        RECT 1.835 2.820 2.005 2.990 ;
+        RECT 4.715 2.820 4.885 2.990 ;
+    END
+  END VPWR
+  PIN Y
+    ANTENNADIFFAREA 2.131200 ;
+    PORT
+      LAYER met1 ;
+        RECT 0.575 2.410 0.865 2.485 ;
+        RECT 3.215 2.410 3.505 2.485 ;
+        RECT 0.575 2.270 3.505 2.410 ;
+        RECT 0.575 2.195 0.865 2.270 ;
+        RECT 3.215 2.195 3.505 2.270 ;
+        RECT 0.650 0.730 0.790 2.195 ;
+        RECT 0.575 0.440 0.865 0.730 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 0.555 2.175 0.885 2.505 ;
+      LAYER mcon ;
+        RECT 0.635 2.255 0.805 2.425 ;
+    END
+    PORT
+      LAYER li1 ;
+        RECT 3.195 2.175 3.525 2.505 ;
+      LAYER mcon ;
+        RECT 3.275 2.255 3.445 2.425 ;
+    END
+  END Y
+  OBS
+      LAYER nwell ;
+        RECT 0.000 1.790 5.760 3.330 ;
+      LAYER li1 ;
+        RECT 1.275 0.825 1.605 1.155 ;
+        RECT 2.715 0.825 3.045 1.155 ;
+        RECT 4.155 0.825 4.485 1.155 ;
+        RECT 0.555 0.420 0.885 0.750 ;
+      LAYER mcon ;
+        RECT 1.355 0.905 1.525 1.075 ;
+        RECT 2.795 0.905 2.965 1.075 ;
+        RECT 4.235 0.905 4.405 1.075 ;
+        RECT 0.635 0.500 0.805 0.670 ;
+  END
+END NAND3X1
+END LIBRARY
+

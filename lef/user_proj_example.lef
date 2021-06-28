@@ -4969,9 +4969,9 @@ MACRO user_proj_example
   END vssa2
   OBS
       LAYER li1 ;
-        RECT 5.760 13.235 294.240 286.465 ;
+        RECT 5.760 10.460 294.240 286.465 ;
       LAYER met1 ;
-        RECT 0.080 5.975 299.440 286.625 ;
+        RECT 0.080 7.085 299.440 286.625 ;
       LAYER met2 ;
         RECT 0.110 295.720 0.780 296.000 ;
         RECT 1.620 295.720 3.180 296.000 ;
@@ -5224,7 +5224,7 @@ MACRO user_proj_example
         RECT 295.380 4.000 295.500 4.280 ;
         RECT 297.780 4.000 297.900 4.280 ;
       LAYER met3 ;
-        RECT 21.280 12.045 253.280 286.545 ;
+        RECT 21.280 13.155 253.280 286.545 ;
   END
 END user_proj_example
 END LIBRARY
