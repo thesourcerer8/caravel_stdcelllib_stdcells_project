@@ -7,7 +7,7 @@ project:
   organization_url: "http://libresilicon.com"
   owner: "Philipp Guehring"
   process: "SKY130"
-  project_name: "Caravel"
+  project_name: "automaticstandardcelllibrary"
   project_id: "00000150"
   tags:
     - "Open MPW"
