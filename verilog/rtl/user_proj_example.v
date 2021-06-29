@@ -36,13 +36,20 @@ module user_proj_example #(
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
-    input  [127:0] la_oen,
+    input  [127:0] la_oenb,
 
     // IOs
     input  [`MPRJ_IO_PADS-1:0] io_in,
     output [`MPRJ_IO_PADS-1:0] io_out,
-    output [`MPRJ_IO_PADS-1:0] io_oeb
+    output [`MPRJ_IO_PADS-1:0] io_oeb,
+
+    // IRQ
+    output [2:0] irq,
+
 );
+
+    // IRQ
+    assign irq = 3'b000;	// Unused
 
 AND2X1 AND2X1(
  `ifdef USE_POWER_PINS
@@ -251,3 +258,4 @@ assign io_oeb[35] = 1'b1;
 assign io_oeb[36] = 1'b1;
 assign io_oeb[37] = 1'b0;
 endmodule
+`default_nettype wire

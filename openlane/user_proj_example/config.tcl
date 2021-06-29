@@ -71,5 +71,5 @@ set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_ls"
 # set ::env(GLB_RT_OBS) "met2 0 3519 2920 3540" # Might be needed for precheck
 
 # The following is a workaround on the extraction issue with the power rails in the Libresilicon cells. This should be removed when the reason has been identified and solved:
-set ::env(QUIT_ON_ILLEGAL_OVERLAPS) 1
+set ::env(QUIT_ON_ILLEGAL_OVERLAPS) 0
 
