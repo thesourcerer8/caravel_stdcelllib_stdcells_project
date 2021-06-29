@@ -8,7 +8,7 @@ project:
   owner: "Philipp Guehring"
   process: "SKY130"
   project_name: "Caravel"
-  project_id: "00000000"
+  project_id: "00000150"
   tags:
     - "Open MPW"
     - "Test Wafer"
@@ -20,4 +20,4 @@ project:
   top_level_netlist: "caravel/verilog/gl/caravel.v"
   user_level_netlist: "verilog/gl/user_project_wrapper.v"
   version: "1.00"
-  cover_image: "docs/source/_static/caravel_harness.png"
+  cover_image: "docs/source/_static/user_proj_example.gds.png"
