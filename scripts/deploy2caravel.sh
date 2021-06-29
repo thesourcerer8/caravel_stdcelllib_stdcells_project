@@ -64,6 +64,6 @@ perl $CARAVEL/scripts/placement.pl >$CARAVEL/openlane/user_proj_example/macro_pl
 cd $CARAVEL
 #bash my.sh
 echo "Now building the Caravel user-project"
-make user_proj_example
+make user_proj_example && make user_project_wrapper
 
 echo "Deployment done.";
