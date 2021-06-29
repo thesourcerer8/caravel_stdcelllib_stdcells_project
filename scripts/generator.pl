@@ -46,8 +46,15 @@ module user_proj_example #(
     // IOs
     input  [`MPRJ_IO_PADS-1:0] io_in,
     output [`MPRJ_IO_PADS-1:0] io_out,
-    output [`MPRJ_IO_PADS-1:0] io_oeb
+    output [`MPRJ_IO_PADS-1:0] io_oeb,
+
+    // IRQ
+    output [2:0] irq,
+
 );
+
+    // IRQ
+    assign irq = 3'b000;	// Unused
 
 EOF
 ;
@@ -125,3 +132,4 @@ foreach my $mag(<$STDCELLLIB/Catalog/*.mag>)
 }
 print $conf;
 print "endmodule\n";
+print "`default_nettype wire\n";
