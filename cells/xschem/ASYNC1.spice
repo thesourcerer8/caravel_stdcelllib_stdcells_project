@@ -1,0 +1,28 @@
+**.subckt ASYNC1 A B A B C CN B A B A
+*.ipin A
+*.ipin B
+*.ipin A
+*.ipin B
+*.opin C
+*.opin CN
+*.ipin B
+*.ipin A
+*.ipin B
+*.ipin A
+m1 CN B net3 enbsim3 m=1
+x1 net4 A VDD epbsim3 m=1
+x0 CN B net4 epbsim3 m=1
+x2 net1 A VDD epbsim3 m=1
+x3 net1 B VDD epbsim3 m=1
+x4 CN C net1 epbsim3 m=1
+x5 C CN VDD epbsim3 m=1
+m0 CN C net2 enbsim3 m=1
+m2 net3 A GND enbsim3 m=1
+m3 net2 B GND enbsim3 m=1
+m4 net2 A GND enbsim3 m=1
+m5 C CN GND enbsim3 m=1
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+** flattened .save nodes
+.end

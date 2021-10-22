@@ -215,7 +215,7 @@ C {devices/ipin.sym} 400 240 2 0 {name=p5 lab=B}
 C {devices/ipin.sym} 400 300 2 0 {name=p6 lab=A}
 C {devices/ipin.sym} 400 360 2 0 {name=p7 lab=A}
 C {devices/ipin.sym} 400 420 2 0 {name=p8 lab=B}
-C {devices/iopin.sym} 260 230 3 0 {name=p9 lab=C}
-C {devices/iopin.sym} 270 430 1 0 {name=p10 lab=C}
-C {devices/iopin.sym} 100 330 2 0 {name=p11 lab=CN}
-C {devices/iopin.sym} 570 340 0 0 {name=p12 lab=C}
+C {devices/opin.sym} 260 230 3 0 {name=p9 lab=C}
+C {devices/opin.sym} 270 430 1 0 {name=p10 lab=C}
+C {devices/opin.sym} 100 330 2 0 {name=p11 lab=CN}
+C {devices/opin.sym} 570 340 0 0 {name=p12 lab=C}
