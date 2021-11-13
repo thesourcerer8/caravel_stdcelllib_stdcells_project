@@ -38,6 +38,47 @@ M6 3 D Y VGND nmos w=0.420u l=0.150u
 M7 3 C VGND VGND nmos w=0.420u l=0.150u
 .ends AOI22X1
 
+.subckt ASYNC1 VPWR VGND A B C CN
+M0 CN B net3 VGND nmos w=0.420u l=0.150u
+M1 net4 A VDD VPWR pmos w=0.840u l=0.150u
+M2 CN B net4 VPWR pmos w=0.840u l=0.150u
+M3 net1 A VDD VPWR pmos w=0.840u l=0.150u
+M4 net1 B VDD VPWR pmos w=0.840u l=0.150u
+M5 CN C net1 VPWR pmos w=0.840u l=0.150u
+M6 C CN VDD VPWR pmos w=0.840u l=0.150u
+M7 CN C net2 VGND nmos w=0.420u l=0.150u
+M8 net3 A GND VGND nmos w=0.420u l=0.150u
+M9 net2 B GND VGND nmos w=0.420u l=0.150u
+M10 net2 A GND VGND nmos w=0.420u l=0.150u
+M11 C CN GND VGND nmos w=0.420u l=0.150u
+.ends ASYNC1
+
+.subckt ASYNC2 VPWR VGND A B C CN
+M0 CN C GND VGND nmos w=0.420u l=0.150u
+M1 net1 A VDD VPWR pmos w=0.840u l=0.150u
+M2 CN B net1 VPWR pmos w=0.840u l=0.150u
+M3 C CN VDD VPWR pmos w=0.840u l=0.150u
+M4 CN C VDD VPWR pmos w=0.840u l=0.150u
+M5 CN B net2 VGND nmos w=0.420u l=0.150u
+M6 net2 A GND VGND nmos w=0.420u l=0.150u
+M7 C CN GND VGND nmos w=0.420u l=0.150u
+.ends ASYNC2
+
+.subckt ASYNC3 VPWR VGND B A C CN
+M0 CN B net2 VGND nmos w=0.420u l=0.150u
+M1 net2 A GND VGND nmos w=0.420u l=0.150u
+M2 CN A net1 VGND nmos w=0.420u l=0.150u
+M3 C CN GND VGND nmos w=0.420u l=0.150u
+M4 net1 B GND VGND nmos w=0.420u l=0.150u
+M5 net2 C net1 VGND nmos w=0.420u l=0.150u
+M6 CN B net3 VPWR pmos w=0.840u l=0.150u
+M7 net3 A VDD VPWR pmos w=0.840u l=0.150u
+M8 net4 B VDD VPWR pmos w=0.840u l=0.150u
+M9 CN A net4 VPWR pmos w=0.840u l=0.150u
+M10 C CN VDD VPWR pmos w=0.840u l=0.150u
+M11 net4 C net3 VPWR pmos w=0.840u l=0.150u
+.ends ASYNC3
+
 .subckt BUFX2 VPWR VGND A Y
 M0 1 A VPWR VPWR pmos w=0.840u l=0.150u
 M1 Y 1 VPWR VPWR pmos w=0.840u l=0.150u
@@ -382,6 +423,17 @@ M33 usemux0asel0n usexor_p usemux1muxsel1n VGND nmos w=0.420u l=0.150u
 M34 usemux1muxsel1p usexor_n usemux0asel0p VPWR pmos w=0.840u l=0.150u
 .ends LOFTY2
 
+.subckt MARTIN1989 VPWR VGND A B C
+M0 net2 B net3 VGND nmos w=0.420u l=0.150u
+M1 net1 A VDD VPWR pmos w=0.840u l=0.150u
+M2 net2 B net1 VPWR pmos w=0.840u l=0.150u
+M3 C net2 VDD VPWR pmos w=0.840u l=0.150u
+M4 net3 A GND VGND nmos w=0.420u l=0.150u
+M5 C net2 GND VGND nmos w=0.420u l=0.150u
+M6 net2 C VDD VPWR pmos w=0.840u l=0.150u
+M7 net2 C GND VGND nmos w=0.420u l=0.150u
+.ends MARTIN1989
+
 .subckt MUX2X1 VPWR VGND S B A Y
 M0 1 S VPWR VPWR pmos w=0.840u l=0.150u
 M1 2 B VPWR VPWR pmos w=0.840u l=0.150u
@@ -723,6 +775,21 @@ R80 YPAD 5 100
 R81 5 YPAD 100
 .ends PADOUT
 
+.subckt SUTHERLAND1989 VPWR VGND B A C
+M0 net6 B net5 VGND nmos w=0.420u l=0.150u
+M1 net2 A VDD VPWR pmos w=0.840u l=0.150u
+M2 net6 B net2 VPWR pmos w=0.840u l=0.150u
+M3 net1 A VDD VPWR pmos w=0.840u l=0.150u
+M4 net1 B VDD VPWR pmos w=0.840u l=0.150u
+M5 net3 C net1 VPWR pmos w=0.840u l=0.150u
+M6 C net3 VDD VPWR pmos w=0.840u l=0.150u
+M7 net3 C net4 VGND nmos w=0.420u l=0.150u
+M8 net5 A GND VGND nmos w=0.420u l=0.150u
+M9 net4 B GND VGND nmos w=0.420u l=0.150u
+M10 net4 A GND VGND nmos w=0.420u l=0.150u
+M11 C net3 GND VGND nmos w=0.420u l=0.150u
+.ends SUTHERLAND1989
+
 .subckt TBUFX1 VPWR VGND EN A Y
 M0 1 EN VPWR VPWR pmos w=0.840u l=0.150u
 M1 2 1 Y VPWR pmos w=0.840u l=0.150u
@@ -744,6 +811,21 @@ M7 3 EN Y VGND nmos w=0.420u l=0.150u
 M8 3 A VGND VGND nmos w=0.420u l=0.150u
 M9 3 A VGND VGND nmos w=0.420u l=0.150u
 .ends TBUFX2
+
+.subckt VANBERKEL1991 VPWR VGND A B C
+M0 net3 B net5 VGND nmos w=0.420u l=0.150u
+M1 net2 A VDD VPWR pmos w=0.840u l=0.150u
+M2 net3 B net2 VPWR pmos w=0.840u l=0.150u
+M3 net1 B VDD VPWR pmos w=0.840u l=0.150u
+M4 net3 A net1 VPWR pmos w=0.840u l=0.150u
+M5 C net3 VDD VPWR pmos w=0.840u l=0.150u
+M6 net3 A net4 VGND nmos w=0.420u l=0.150u
+M7 net5 A GND VGND nmos w=0.420u l=0.150u
+M8 net4 B GND VGND nmos w=0.420u l=0.150u
+M9 net4 C net5 VGND nmos w=0.420u l=0.150u
+M10 C net3 GND VGND nmos w=0.420u l=0.150u
+M11 net1 C net2 VPWR pmos w=0.840u l=0.150u
+.ends VANBERKEL1991
 
 .subckt XNOR2X1 VPWR VGND B A Y
 M0 1 A VPWR VPWR pmos w=0.840u l=0.150u
