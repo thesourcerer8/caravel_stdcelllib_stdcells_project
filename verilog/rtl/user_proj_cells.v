@@ -84,6 +84,16 @@ module CLKBUF1(
 );
 endmodule
 
+module CLKBUF2(
+  inout A, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout VPWR, // cell power supply
+	inout VGND  // cell ground supply
+     `endif
+);
+endmodule
+
 module INV(
   inout A, // input
   inout Y, // output
@@ -161,6 +171,42 @@ module NAND3X1(
   inout A, // input
   inout B, // input
   inout C, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout VPWR, // cell power supply
+	inout VGND  // cell ground supply
+     `endif
+);
+endmodule
+
+module NOR2X1(
+  inout A, // input
+  inout B, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout VPWR, // cell power supply
+	inout VGND  // cell ground supply
+     `endif
+);
+endmodule
+
+module OAI21X1(
+  inout A, // input
+  inout B, // input
+  inout C, // input
+  inout Y, // output
+     `ifdef USE_POWER_PINS
+	inout VPWR, // cell power supply
+	inout VGND  // cell ground supply
+     `endif
+);
+endmodule
+
+module OAI22X1(
+  inout A, // input
+  inout B, // input
+  inout C, // input
+  inout D, // input
   inout Y, // output
      `ifdef USE_POWER_PINS
 	inout VPWR, // cell power supply
