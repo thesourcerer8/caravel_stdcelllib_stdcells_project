@@ -84,16 +84,6 @@ module CLKBUF1(
 );
 endmodule
 
-module CLKBUF2(
-  inout A, // input
-  inout Y, // output
-     `ifdef USE_POWER_PINS
-	inout VPWR, // cell power supply
-	inout VGND  // cell ground supply
-     `endif
-);
-endmodule
-
 module INV(
   inout A, // input
   inout Y, // output

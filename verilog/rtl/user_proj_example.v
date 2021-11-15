@@ -114,7 +114,7 @@ CLKBUF1 CLKBUF1(
   .A(io_in[19]),
   .Y(io_out[20]),
 );
-CLKBUF2 CLKBUF2(
+INV INV(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
@@ -122,7 +122,7 @@ CLKBUF2 CLKBUF2(
   .A(io_in[21]),
   .Y(io_out[22]),
 );
-INV INV(
+INVX1 INVX1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
@@ -130,7 +130,7 @@ INV INV(
   .A(io_in[23]),
   .Y(io_out[24]),
 );
-INVX1 INVX1(
+INVX2 INVX2(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
@@ -138,7 +138,7 @@ INVX1 INVX1(
   .A(io_in[25]),
   .Y(io_out[26]),
 );
-INVX2 INVX2(
+INVX4 INVX4(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
@@ -146,7 +146,7 @@ INVX2 INVX2(
   .A(io_in[27]),
   .Y(io_out[28]),
 );
-INVX4 INVX4(
+INVX8 INVX8(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
@@ -154,108 +154,100 @@ INVX4 INVX4(
   .A(io_in[29]),
   .Y(io_out[30]),
 );
-INVX8 INVX8(
- `ifdef USE_POWER_PINS
-  .VPWR(vccd1),
-  .VGND(vssd1),
- `endif
-  .A(io_in[31]),
-  .Y(io_out[32]),
-);
 MUX2X1 MUX2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(io_in[33]),
-  .B(io_in[34]),
-  .S(io_in[35]),
-  .Y(io_out[36]),
+  .A(io_in[31]),
+  .B(io_in[32]),
+  .S(io_in[33]),
+  .Y(io_out[34]),
 );
 NAND2X1 NAND2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(io_in[37]),
-  .B(la_data_in[0]),
-  .Y(la_data_out[1]),
+  .A(io_in[35]),
+  .B(io_in[36]),
+  .Y(io_out[37]),
 );
 NAND3X1 NAND3X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[2]),
-  .B(la_data_in[3]),
-  .C(la_data_in[4]),
-  .Y(la_data_out[5]),
+  .A(la_data_in[0]),
+  .B(la_data_in[1]),
+  .C(la_data_in[2]),
+  .Y(la_data_out[3]),
 );
 NOR2X1 NOR2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[6]),
-  .B(la_data_in[7]),
-  .Y(la_data_out[8]),
+  .A(la_data_in[4]),
+  .B(la_data_in[5]),
+  .Y(la_data_out[6]),
 );
 OAI21X1 OAI21X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[9]),
-  .B(la_data_in[10]),
-  .C(la_data_in[11]),
-  .Y(la_data_out[12]),
+  .A(la_data_in[7]),
+  .B(la_data_in[8]),
+  .C(la_data_in[9]),
+  .Y(la_data_out[10]),
 );
 OAI22X1 OAI22X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[13]),
-  .B(la_data_in[14]),
-  .C(la_data_in[15]),
-  .D(la_data_in[16]),
-  .Y(la_data_out[17]),
+  .A(la_data_in[11]),
+  .B(la_data_in[12]),
+  .C(la_data_in[13]),
+  .D(la_data_in[14]),
+  .Y(la_data_out[15]),
 );
 OR2X1 OR2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[18]),
-  .B(la_data_in[19]),
-  .Y(la_data_out[20]),
+  .A(la_data_in[16]),
+  .B(la_data_in[17]),
+  .Y(la_data_out[18]),
 );
 OR2X2 OR2X2(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[21]),
-  .B(la_data_in[22]),
-  .Y(la_data_out[23]),
+  .A(la_data_in[19]),
+  .B(la_data_in[20]),
+  .Y(la_data_out[21]),
 );
 XNOR2X1 XNOR2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[24]),
-  .B(la_data_in[25]),
-  .Y(la_data_out[26]),
+  .A(la_data_in[22]),
+  .B(la_data_in[23]),
+  .Y(la_data_out[24]),
 );
 XOR2X1 XOR2X1(
  `ifdef USE_POWER_PINS
   .VPWR(vccd1),
   .VGND(vssd1),
  `endif
-  .A(la_data_in[27]),
-  .B(la_data_in[28]),
-  .Y(la_data_out[29]),
+  .A(la_data_in[25]),
+  .B(la_data_in[26]),
+  .Y(la_data_out[27]),
 );
 assign io_oeb[0] = 1'b1;
 assign io_oeb[1] = 1'b1;
@@ -289,11 +281,11 @@ assign io_oeb[28] = 1'b0;
 assign io_oeb[29] = 1'b1;
 assign io_oeb[30] = 1'b0;
 assign io_oeb[31] = 1'b1;
-assign io_oeb[32] = 1'b0;
+assign io_oeb[32] = 1'b1;
 assign io_oeb[33] = 1'b1;
-assign io_oeb[34] = 1'b1;
+assign io_oeb[34] = 1'b0;
 assign io_oeb[35] = 1'b1;
-assign io_oeb[36] = 1'b0;
-assign io_oeb[37] = 1'b1;
+assign io_oeb[36] = 1'b1;
+assign io_oeb[37] = 1'b0;
 endmodule
 `default_nettype wire
