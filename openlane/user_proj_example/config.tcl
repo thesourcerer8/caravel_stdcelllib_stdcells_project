@@ -15,6 +15,7 @@
 
 set ::env(PDK) "sky130A"
 #set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_hd"
+set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_ls"
 
 set script_dir [file dirname [file normalize [info script]]]
 
@@ -39,7 +40,6 @@ set ::env(CLOCK_TREE_SYNTH) 0
 set ::env(RUN_SPEF_EXTRACTION) 0
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
-
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
@@ -47,13 +47,15 @@ set ::env(CLOCK_NET) "counter.clk"
 set ::env(CLOCK_PERIOD) "10"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 900 600"
-#set ::env(DIE_AREA) "0 0 300 300"
+#set ::env(DIE_AREA) "0 0 900 600"
+set ::env(DIE_AREA) "0 0 300 300"
 
-set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
-set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
+set ::env(VDD_NETS) [list {vccd1}]
+set ::env(GND_NETS) [list {vssd1}]
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+
+set ::env(FP_TAPCELL_DIST) 13
 
 set ::env(PL_BASIC_PLACEMENT) 0
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
@@ -90,3 +92,4 @@ set ::env(GLB_RT_MAXLAYER) 5
 #set ::env(GND_NETS) [list {vssd1}]
 
 set ::env(DIODE_INSERTION_STRATEGY) 4 
+
