@@ -4,6 +4,8 @@ use strict;
 foreach my $mag (<*.mag>)
 {
   my $name=$mag; $name=~s/\.mag$//;
+  next if($mag=~m/^sky130_/);
+  next if($mag=~m/^demo/);
   system "cp $mag $mag.beforemagic";
 
   my $width=150;
@@ -12,17 +14,40 @@ foreach my $mag (<*.mag>)
 
   open IN,"<$mag.beforemagic";
   open OUT,">$mag";
+  my $currentlayer="";
   while(<IN>)
   {
-    if(m/string FIXED_BBOX 0 0 (\d+) (\d+)/)
+    if(m/<< (\w+) >>/)
     {
-      $width=$1; $min=$1-31; $max=$min+31;
-      print "min: $min max: $max\nmagic $mag\nbox $min 17 $max 649\n";
+      $currentlayer=$1;	      
+    }
+    if(m/rect (-?\d+) (-?\d+) (-?\d+) (-?\d+)/ && $currentlayer eq "viali")
+    {
+      if($2<0 || $2>640)
+      {
+        print OUT "<< locali >>\n$_";
+        print OUT "<< metal1 >>\n$_";
+        print OUT "<< viali >>\n";
+	next;
+      }
     }
     s/\bVDD\b/VPWR/g;
     s/\bGND\b/VGND/g;
     print OUT $_;
+    if(m/string FIXED_BBOX 0 0 (\d+) (\d+)/)
+    {
+      $width=$1; $min=$1-31; $max=$min+31;
+      print "min: $min max: $max\nmagic $mag\nbox $min 17 $max 649\n";
+      print OUT "<< viali >>\n";
+      foreach(0 .. ($max /96)-3)
+      {
+        print OUT "rect ".(127+$_*96)." -17 ".(161+$_*96)." 17\n";
+        print OUT "rect ".(127+$_*96)." 649 ".(161+$_*96)." 683\n";
+      }
+    }
+
   }
+
   close IN;
   close OUT;
 
