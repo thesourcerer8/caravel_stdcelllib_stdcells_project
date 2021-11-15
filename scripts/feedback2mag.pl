@@ -23,5 +23,9 @@ while(<STDIN>)
   {
     print "rect ".int($1/1)." ".int($2/1)." ".int($3/1)." ".int($4/1)."\n";
   }
+  if(m/(\d+\.?\d*)um (\d+\.?\d*)um (\d+\.\d*)um (\d+\.?\d*)um/)
+  {	  
+    print "rect ".int($1*200)." ".int($2*200)." ".int($3*200)." ".int($4*200)."\n";
+  }
 }
 print "<< end >>\n";
