@@ -3,7 +3,14 @@
 my $width=0.48;
 my $height=3.33;
 
-our $nextla=$height*7;
+
+my $row=8;
+
+my $xpos=($row%2)? $width*80 : 44.640+0.480;
+
+our $nextla=$height*$row;
+
+
 
 my $STDCELLLIB=$ENV{'STDCELLLIB'} || "/home/philipp/libresilicon/StdCellLib";
 
@@ -18,6 +25,6 @@ foreach my $mag(sort <$STDCELLLIB/Catalog/*.mag>)
   my $name=""; $name=$1 if($mag=~m/([\w\-\.]+)\.mag$/);
   next unless(-f $ENV{'CARAVEL'}."/cells/mag/$name.mag");
 
-  print "$name ".($width*80)." $nextla N\n";
+  print "$name $xpos $nextla N\n";
   $nextla+=$height*2;
 }
