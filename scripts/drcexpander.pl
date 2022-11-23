@@ -169,11 +169,15 @@ if($debug)
 }
 
 # No we are asking magic what those virtual layers actually mean
+    print STDERR "Running magic -T $tech ...\n";
     if(open OUT,"|magic -dnull -noconsole -T $tech >magic.layers.out")
     {
       print OUT "puts \"CUT HERE -------- CUT HERE\"\n";
       foreach(sort keys %alias)
       {
+	s/\(// unless(m/\)/);
+	s/\)// unless(m/\(/);
+	print STDERR "[tech layers $_]\n";
         print OUT "puts \"EXPANDING: $_\"\n";
         print OUT "puts [tech layers $_]\n";
       }
@@ -204,6 +208,7 @@ if($debug)
     {
       die "Could not run magic!\n";
     }
+    print STDERR "Done with magic.\n";
 
 
 if($debug)
