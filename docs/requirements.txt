@@ -4,3 +4,4 @@ docutils
 sphinx
 sphinx-autobuild
 sphinxcontrib-wavedrom
+pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
